@@ -86,7 +86,6 @@ export default function Profile() {
               height: 10,
               bgcolor: "background.paper",
               transparency: "50%",
-              transform: "translateY(-50%) rotate(45deg)",
               zIndex: 0,
             },
             "&:hover": {
@@ -94,7 +93,6 @@ export default function Profile() {
             },
           },
         }}
-        transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <span

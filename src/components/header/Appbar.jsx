@@ -9,6 +9,12 @@ import ViewWeekSharpIcon from "@mui/icons-material/ViewWeekSharp";
 import CloseIcon from "@mui/icons-material/Close";
 import SearchIcon from "@mui/icons-material/Search";
 import { makeStyles } from "@material-ui/core";
+import MenDropdown from "../header/MenDropdown";
+import WomenDropdown from "../header/WomenDropdown";
+import KidsDropdown from "../header/KidsDropdown";
+import HomeDropdown from "../header/HomeDropdown";
+import BeautyDropdown from "../header/BeautyDropdown";
+import StudioDropdown from "../header/StudioDropdown";
 
 const useStyles = makeStyles((theme) => ({
   searchIcon: {
@@ -88,36 +94,45 @@ const Appbar = () => {
         }}
       >
         <li className="nav_items">
-          <Link to="" className={`${classes.catContainerMen}`}>
-            <b>Men</b>
+          <Link to="">
+            <div className={`${classes.catContainerMen}`}>
+              <MenDropdown />
+            </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="" className={`${classes.catContainerWomen}`}>
-            <b>Women</b>
+          <Link to="">
+            <div className={`${classes.catContainerWomen}`}>
+              <WomenDropdown />
+            </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="" className={`${classes.catContainerKids}`}>
-            <b>Kids</b>
+          <Link to="">
+            <div className={`${classes.catContainerKids}`}>
+              <KidsDropdown />
+            </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="" className={`${classes.catContainerHome}`}>
-            <b>Home&Living</b>
+          <Link to="">
+            <div className={`${classes.catContainerHome}`}>
+              <HomeDropdown />
+            </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="" className={`${classes.catContainerBeauty}`}>
-            <b>Beauty</b>
+          <Link to="">
+            <div className={`${classes.catContainerBeauty}`}>
+              <BeautyDropdown />
+            </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="" className={`${classes.catContainerStudio}`}>
-            <b>Studio</b>
-            <span className={classes.newSign}>
-              <b>New</b>
-            </span>
+          <Link to="">
+            <div className={`${classes.catContainerStudio}`}>
+              <StudioDropdown />
+            </div>
           </Link>
         </li>
       </ul>
