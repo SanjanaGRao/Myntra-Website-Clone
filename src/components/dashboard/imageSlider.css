@@ -1,0 +1,72 @@
+.slider {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #fff;
+  margin-top: 2rem;
+}
+
+.wrap {
+  position: relative;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+.wrap:hover {
+  border: 0.5px solid #f41cb2;
+  border-radius: 0.2rem;
+  transition: all 0.3s ease;
+}
+.wrap a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  border-radius: 0.2rem;
+}
+
+.wrap a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.slick-prev {
+  opacity: 0 !important;
+  width: 5vw !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+.slick-prev::before {
+  color: #000 !important;
+}
+.slick-prev:hover {
+  opacity: 1 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.slick-next {
+  opacity: 0 !important;
+  width: 5vw !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+.slick-next::before {
+  color: #000 !important;
+}
+
+.slick-next:hover {
+  opacity: 1 !important;
+  transition: opacity 0.3s ease;
+}
+
+.slick-dots li button::before {
+  font-size: 0.5rem !important;
+  color: gray !important;
+}
+.slick-dots li.slick-active button::before {
+  color: gray !important;
+}
+
+@media screen and (max-width: 568px) {
+  .wrap {
+    border: 1px solid goldenrod;
+  }
+}

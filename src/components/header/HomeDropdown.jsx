@@ -1,91 +1,94 @@
-import * as React from "react";
-import "../header/appbar.css";
-import Box from "@mui/material/Box";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import { styled } from "@mui/material/styles";
-import { makeStyles } from "@material-ui/core";
-import Grid from "@mui/material/Grid";
+import * as React from 'react';
+import './appbar.css';
+import Box from '@mui/material/Box';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
+import { makeStyles } from '@material-ui/core';
+import Grid from '@mui/material/Grid';
+import PropTypes from 'prop-types';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   catContainerHome: {
-    paddingTop: "1.65em",
-    color: "#282c3f",
-    fontSize: "14px",
-    letterSpacing: "0.5px",
+    paddingTop: '1.65em',
+    color: '#282c3f',
+    fontSize: '14px',
+    letterSpacing: '0.5px',
     fontFamily:
-      "Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
-    fontWeight: "500",
-    textTransform: "uppercase",
-    "&:hover ": {
-      borderBottom: "4px solid #f2c210",
+      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
+    fontWeight: '500',
+    textTransform: 'uppercase',
+    '&:hover ': {
+      borderBottom: '4px solid #f2c210',
     },
   },
 }));
 
 const MenuBold = styled(MenuItem)(() => ({
-  fontSize: "14px",
-  paddingTop: "2px",
-  paddingBottom: "2px",
-  paddingRight: "6px",
+  fontSize: '14px',
+  paddingTop: '2px',
+  paddingBottom: '2px',
+  paddingRight: '6px',
   fontFamily:
-    " Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
-  color: "#3e4152",
-  "&:hover": {
-    color: "#3e4152",
-    fontWeight: "700",
-    background: "white",
+    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+  color: '#3e4152',
+  '&:hover': {
+    color: '#3e4152',
+    fontWeight: '700',
+    background: 'white',
   },
 }));
 
 const MenuBold2 = styled(MenuItem)(() => ({
-  fontSize: "14px",
-  paddingTop: "2px",
-  paddingBottom: "2px",
-  paddingRight: "6px",
+  fontSize: '14px',
+  paddingTop: '2px',
+  paddingBottom: '2px',
+  paddingRight: '6px',
   fontFamily:
-    " Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
-  color: "#3e4152",
-  "&:hover": {
-    color: "#3e4152",
-    fontWeight: "700",
-    background: "rgba(245,245,246,.4)",
+    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+  color: '#3e4152',
+  '&:hover': {
+    color: '#3e4152',
+    fontWeight: '700',
+    background: 'rgba(245,245,246,.4)',
   },
 }));
 
 const Heading = styled(MenuItem)(() => ({
-  fontSize: "14px",
+  fontSize: '14px',
   fontFamily:
-    " Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
-  color: "#f2c210",
-  "&:hover": {
-    color: "#f2c210",
-    background: "#fff",
+    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+  color: '#f2c210',
+  '&:hover': {
+    color: '#f2c210',
+    background: '#fff',
   },
 }));
 
 const Heading2 = styled(MenuItem)(() => ({
-  fontSize: "14px",
+  fontSize: '14px',
   fontFamily:
-    " Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
-  color: "#f2c210",
-  "&:hover": {
-    color: "#f2c210",
-    background: "rgba(245,245,246,.4)",
+    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+  color: '#f2c210',
+  '&:hover': {
+    color: '#f2c210',
+    background: 'rgba(245,245,246,.4)',
   },
 }));
 
-const ColoredLine = ({ color }) => (
-  <hr
-    style={{
-      color,
-      backgroundColor: color,
-      width: "185px"
-    }}
-  />
-);
+function ColoredLine({ color }) {
+  return (
+    <hr
+      style={{
+        color,
+        backgroundColor: color,
+        width: '185px',
+      }}
+    />
+  );
+}
 
 export default function HomeDropdown() {
   const classes = useStyles();
@@ -99,8 +102,8 @@ export default function HomeDropdown() {
   };
 
   return (
-    <React.Fragment>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+    <>
+      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Tooltip>
           <IconButton
             onClick={handleClick}
@@ -108,9 +111,9 @@ export default function HomeDropdown() {
             onMouseOver={handleClick}
             size="small"
             sx={{ ml: 2 }}
-            aria-controls={open ? "account-menu" : undefined}
+            aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
+            aria-expanded={open ? 'true' : undefined}
           >
             <div className={`${classes.catContainerHome}`}>
               <span>
@@ -130,29 +133,29 @@ export default function HomeDropdown() {
         PaperProps={{
           elevation: 0,
           sx: {
-            overflow: "visible",
-            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+            overflow: 'visible',
+            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
             mt: 1.5,
-            "& .MuiAvatar-root": {
+            '& .MuiAvatar-root': {
               width: 32,
               height: 32,
               ml: -0.5,
               mr: 1,
             },
-            "&:before": {
+            '&:before': {
               content: '""',
-              display: "block",
-              position: "absolute",
+              display: 'block',
+              position: 'absolute',
               top: 0,
               right: 14,
               width: 10,
               height: 10,
-              bgcolor: "background.paper",
-              transparency: "50%",
+              bgcolor: 'background.paper',
+              transparency: '50%',
               zIndex: 0,
             },
-            "&:hover": {
-              color: "black",
+            '&:hover': {
+              color: 'black',
             },
           },
         }}
@@ -161,15 +164,15 @@ export default function HomeDropdown() {
           <Grid item>
             <div
               style={{
-                backgroundColor: "#fff",
-                padding: "6px",
-                height: "440px",
-                width: "220px"
+                backgroundColor: '#fff',
+                padding: '6px',
+                height: '440px',
+                width: '220px',
               }}
             >
               <Heading>
                 <b>Bed Linen & Furnishing </b>
-              </Heading>          
+              </Heading>
               <MenuBold> Bedsheets</MenuBold>
               <MenuBold> Bedding Sets</MenuBold>
               <MenuBold> Blankets, Quilts & Dohars</MenuBold>
@@ -190,10 +193,10 @@ export default function HomeDropdown() {
           <Grid item>
             <div
               style={{
-                backgroundColor: "rgba(245,245,246,.4)",
-                padding: "6px",
-                height: "440px",
-                width: "220px"
+                backgroundColor: 'rgba(245,245,246,.4)',
+                padding: '6px',
+                height: '440px',
+                width: '220px',
               }}
             >
               <Heading2>
@@ -222,25 +225,25 @@ export default function HomeDropdown() {
           <Grid item>
             <div
               style={{
-                backgroundColor: "#fff",
-                padding: "6px",
-                height: "440px",
-                width: "220px"
+                backgroundColor: '#fff',
+                padding: '6px',
+                height: '440px',
+                width: '220px',
               }}
             >
               <Heading>
                 <b>Home Décor </b>
-              </Heading>       
-              <MenuBold> Plants & Planters</MenuBold> 
-              <MenuBold> Aromas & Candles</MenuBold> 
-              <MenuBold> Clocks</MenuBold> 
-              <MenuBold> Mirrors</MenuBold> 
-              <MenuBold> Wall Décor</MenuBold> 
-              <MenuBold> Festive Decor</MenuBold> 
-              <MenuBold> Pooja Essentials</MenuBold> 
-              <MenuBold> Wall Shelves</MenuBold> 
-              <MenuBold> Fountains</MenuBold> 
-              <MenuBold> Showpieces & Vases</MenuBold> 
+              </Heading>
+              <MenuBold> Plants & Planters</MenuBold>
+              <MenuBold> Aromas & Candles</MenuBold>
+              <MenuBold> Clocks</MenuBold>
+              <MenuBold> Mirrors</MenuBold>
+              <MenuBold> Wall Décor</MenuBold>
+              <MenuBold> Festive Decor</MenuBold>
+              <MenuBold> Pooja Essentials</MenuBold>
+              <MenuBold> Wall Shelves</MenuBold>
+              <MenuBold> Fountains</MenuBold>
+              <MenuBold> Showpieces & Vases</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
               <Heading>
                 <b>Cushions & Cushion Covers </b>
@@ -256,10 +259,10 @@ export default function HomeDropdown() {
           <Grid item>
             <div
               style={{
-                backgroundColor: "rgba(245,245,246,.4)",
-                padding: "6px",
-                height: "440px",
-                width: "220px"
+                backgroundColor: 'rgba(245,245,246,.4)',
+                padding: '6px',
+                height: '440px',
+                width: '220px',
               }}
             >
               <Heading2>
@@ -283,10 +286,10 @@ export default function HomeDropdown() {
           <Grid item>
             <div
               style={{
-                backgroundColor: "#fff",
-                padding: "6px",
-                height: "440px",
-                width: "220px"
+                backgroundColor: '#fff',
+                padding: '6px',
+                height: '440px',
+                width: '220px',
               }}
             >
               <Heading>
@@ -294,7 +297,7 @@ export default function HomeDropdown() {
               </Heading>
               <MenuBold>Home Centre</MenuBold>
               <MenuBold>Spaces</MenuBold>
-              <MenuBold>D'Decor</MenuBold>
+              <MenuBold>D&apso;Decor</MenuBold>
               <MenuBold>Portico New York</MenuBold>
               <MenuBold>Story@Home</MenuBold>
               <MenuBold>Pure Home & Living</MenuBold>
@@ -312,6 +315,13 @@ export default function HomeDropdown() {
           </Grid>
         </Grid>
       </Menu>
-    </React.Fragment>
+    </>
   );
 }
+
+ColoredLine.propTypes = {
+  color: PropTypes.string,
+};
+ColoredLine.defaultProps = {
+  color: 'rgba(245,245,246,.4)',
+};

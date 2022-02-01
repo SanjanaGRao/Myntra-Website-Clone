@@ -1,135 +1,138 @@
-import React, { useState } from "react";
-import Profile from "./Profile";
-import { Link } from "react-router-dom";
-import "../header/appbar.css";
-import Logo from "../assets/myntra_logo.png";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
-import ViewWeekSharpIcon from "@mui/icons-material/ViewWeekSharp";
-import CloseIcon from "@mui/icons-material/Close";
-import SearchIcon from "@mui/icons-material/Search";
-import { makeStyles } from "@material-ui/core";
-import MenDropdown from "../header/MenDropdown";
-import WomenDropdown from "../header/WomenDropdown";
-import KidsDropdown from "../header/KidsDropdown";
-import HomeDropdown from "../header/HomeDropdown";
-import BeautyDropdown from "../header/BeautyDropdown";
-import StudioDropdown from "../header/StudioDropdown";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './appbar.css';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import ViewWeekSharpIcon from '@mui/icons-material/ViewWeekSharp';
+import CloseIcon from '@mui/icons-material/Close';
+import SearchIcon from '@mui/icons-material/Search';
+import { makeStyles } from '@material-ui/core';
+import { IconButton } from '@mui/material';
+import Logo from '../assets/myntra_logo.png';
+import MenDropdown from './MenDropdown';
+import WomenDropdown from './WomenDropdown';
+import KidsDropdown from './KidsDropdown';
+import HomeDropdown from './HomeDropdown';
+import BeautyDropdown from './BeautyDropdown';
+import StudioDropdown from './StudioDropdown';
+import Profile from './Profile';
 
 const useStyles = makeStyles((theme) => ({
   searchIcon: {
     padding: theme.spacing(0, 1),
-    height: "100%",
-    position: "left",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "left",
-    justifyContent: "left",
-    cursor: "pointer",
-    "&:hover": {
-      backgroundColor: "white",
+    height: '100%',
+    position: 'left',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'left',
+    justifyContent: 'left',
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: 'white',
     },
   },
   catContainerMen: {
-    "&:hover ": {
-      borderBottom: "4px solid #ee5f73",
+    '&:hover ': {
+      borderBottom: '4px solid #ee5f73',
     },
   },
   catContainerWomen: {
-    "&:hover ": {
-      borderBottom: "4px solid #fb56c1",
+    '&:hover ': {
+      borderBottom: '4px solid #fb56c1',
     },
   },
   catContainerKids: {
-    "&:hover ": {
-      borderBottom: "4px solid #f26a10",
+    '&:hover ': {
+      borderBottom: '4px solid #f26a10',
     },
   },
   catContainerHome: {
-    "&:hover ": {
-      borderBottom: "4px solid #f2c210",
+    '&:hover ': {
+      borderBottom: '4px solid #f2c210',
     },
   },
   catContainerBeauty: {
-    "&:hover ": {
-      borderBottom: "4px solid #0db7af",
+    '&:hover ': {
+      borderBottom: '4px solid #0db7af',
     },
   },
   catContainerStudio: {
-    "&:hover ": {
-      borderBottom: "4px solid #ff3f6c",
+    '&:hover ': {
+      borderBottom: '4px solid #ff3f6c',
     },
   },
   newSign: {
-    color: "#ff3f6c",
-    top: "-0.4rem",
-    fontSize: "65%",
-    lineHeight: "0",
-    position: "relative",
-    verticalAlign: "baseline",
-    textTransform: "uppercase",
+    color: '#ff3f6c',
+    top: '-0.4rem',
+    fontSize: '65%',
+    lineHeight: '0',
+    position: 'relative',
+    verticalAlign: 'baseline',
+    textTransform: 'uppercase',
   },
 }));
 
-const Appbar = () => {
+export default function Appbar() {
   const [inMobile, setInMobile] = useState(false);
   const classes = useStyles();
 
   const landingPage = () => {
-    window.location = "/";
+    window.location = '/';
+  };
+
+  const mobileView = () => {
+    setInMobile(!inMobile);
   };
 
   return (
     <div className="header">
-      <img
-        src={Logo}
-        alt="logo"
-        className="header_logo"
-        onClick={landingPage}
-      />
+      <IconButton onClick={landingPage} style={{ paddingLeft: '1em', paddingRight: '1em' }}>
+        <img
+          src={Logo}
+          alt="logo"
+          className="header_logo"
+        />
+      </IconButton>
       <ul
-        className={inMobile ? "nav_links_mobile" : "nav_links"}
-        onClick={() => {
-          setInMobile(false);
-        }}
+        className={inMobile ? 'nav_links_mobile' : 'nav_links'}
       >
         <li className="nav_items">
-          <Link to="">
+          <Link to="/men">
             <div className={`${classes.catContainerMen}`}>
               <MenDropdown />
             </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="">
+          <Link to="/women">
             <div className={`${classes.catContainerWomen}`}>
               <WomenDropdown />
             </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="">
+          <Link to="/kids">
             <div className={`${classes.catContainerKids}`}>
               <KidsDropdown />
             </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="">
+          <Link to="/home">
             <div className={`${classes.catContainerHome}`}>
               <HomeDropdown />
             </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="">
+          <Link to="/beauty">
             <div className={`${classes.catContainerBeauty}`}>
               <BeautyDropdown />
             </div>
           </Link>
         </li>
         <li className="nav_items">
-          <Link to="">
+          <Link to="/studio">
             <div className={`${classes.catContainerStudio}`}>
               <StudioDropdown />
             </div>
@@ -138,41 +141,38 @@ const Appbar = () => {
       </ul>
       <div className="header_search">
         <div className={classes.searchIcon}>
-          <SearchIcon fontSize="medium" style={{ color: "#7e7f92" }} />
+          <SearchIcon fontSize="medium" style={{ color: '#7e7f92' }} />
         </div>
         <input type="text" placeholder="Search for products, brands and more" />
       </div>
 
       <div className="header_icons">
-        <Link to="">
+        <Link to="profile">
           <div className="header_user">
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profile</span>
+            <span>&nbsp;&nbsp;&nbsp;Profile</span>
             <Profile />
           </div>
         </Link>
-        <Link to="">
+        <Link to="wishlist">
           <div className="header_user">
             <FavoriteBorderIcon className="header_identity" />
             <span>Whislist</span>
           </div>
         </Link>
-        <Link to="">
+        <Link to="cart">
           <div className="header_user">
-            <LocalMallOutlinedIcon className="header_identity" />
+            <ShoppingBagOutlinedIcon className="header_identity" />
             <span>Bag</span>
           </div>
         </Link>
       </div>
       <div
         className="hamburger"
-        onClick={() => {
-          setInMobile(!inMobile);
-        }}
+        onClick={() => mobileView()}
+        aria-hidden="true"
       >
         {inMobile ? <CloseIcon /> : <ViewWeekSharpIcon fontSize="small" />}
       </div>
     </div>
   );
-};
-
-export default Appbar;
+}
