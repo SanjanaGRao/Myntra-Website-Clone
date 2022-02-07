@@ -29,40 +29,40 @@
   object-fit: contain;
 }
 .slick-prev {
-  opacity: 0 !important;
-  width: 5vw !important;
-  height: 100% !important;
-  z-index: 1 !important;
+  opacity: 0 ;
+  width: 5vw ;
+  height: 100% ;
+  z-index: 1 ;
 }
 .slick-prev::before {
-  color: #000 !important;
+  color: #000 ;
 }
 .slick-prev:hover {
-  opacity: 1 !important;
-  transition: opacity 0.3s ease !important;
+  opacity: 1 ;
+  transition: opacity 0.3s ease ;
 }
 
 .slick-next {
-  opacity: 0 !important;
-  width: 5vw !important;
-  height: 100% !important;
-  z-index: 1 !important;
+  opacity: 0 ;
+  width: 5vw ;
+  height: 100% ;
+  z-index: 1 ;
 }
 .slick-next::before {
-  color: #000 !important;
+  color: #000 ;
 }
 
 .slick-next:hover {
-  opacity: 1 !important;
+  opacity: 1 ;
   transition: opacity 0.3s ease;
 }
 
 .slick-dots li button::before {
-  font-size: 0.5rem !important;
-  color: gray !important;
+  font-size: 0.5rem ;
+  color: gray ;
 }
 .slick-dots li.slick-active button::before {
-  color: gray !important;
+  color: gray ;
 }
 
 @media screen and (max-width: 568px) {

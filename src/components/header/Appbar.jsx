@@ -1,3 +1,10 @@
+/**
+* Header of the Myntra Website
+* All the subcomponents of the header are broken down into further small functions in
+* other respective files. This file connects them all to give a whole component
+* @returns the header of the website
+* @author Sanjana Rao
+*/
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './appbar.css';
@@ -8,7 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import SearchIcon from '@mui/icons-material/Search';
 import { makeStyles } from '@material-ui/core';
 import { IconButton } from '@mui/material';
-import Logo from '../assets/myntra_logo.png';
+import Logo from '../../assets/myntra_logo.png';
 import MenDropdown from './MenDropdown';
 import WomenDropdown from './WomenDropdown';
 import KidsDropdown from './KidsDropdown';
@@ -17,6 +24,9 @@ import BeautyDropdown from './BeautyDropdown';
 import StudioDropdown from './StudioDropdown';
 import Profile from './Profile';
 
+/**
+ * @description Makes use of makeStyles from MUI to generate custom styling to components
+ */
 const useStyles = makeStyles((theme) => ({
   searchIcon: {
     padding: theme.spacing(0, 1),
@@ -76,10 +86,12 @@ export default function Appbar() {
   const [inMobile, setInMobile] = useState(false);
   const classes = useStyles();
 
+  // Routing Function to go to dashboard
   const landingPage = () => {
     window.location = '/';
   };
 
+  // Function to set the state for mobile view
   const mobileView = () => {
     setInMobile(!inMobile);
   };
@@ -90,78 +102,102 @@ export default function Appbar() {
         <img
           src={Logo}
           alt="logo"
-          className="header_logo"
+          className="headerLogo"
         />
       </IconButton>
       <ul
-        className={inMobile ? 'nav_links_mobile' : 'nav_links'}
+        className={inMobile ? 'navLinksMobile' : 'navLinks'}
       >
-        <li className="nav_items">
+        <li className="navItems">
           <Link to="/men">
             <div className={`${classes.catContainerMen}`}>
-              <MenDropdown />
+              {(!inMobile) ? <MenDropdown /> : (
+                <Link to="/men">
+                  <span className={`${classes.catContainerMen}`}>MEN</span>
+                </Link>
+              )}
             </div>
           </Link>
         </li>
-        <li className="nav_items">
+        <li className="navItems">
           <Link to="/women">
             <div className={`${classes.catContainerWomen}`}>
-              <WomenDropdown />
+              {(!inMobile) ? <WomenDropdown /> : (
+                <Link to="/women">
+                  <span className={`${classes.catContainerWomen}`}>WOMEN</span>
+                </Link>
+              )}
             </div>
           </Link>
         </li>
-        <li className="nav_items">
+        <li className="navItems">
           <Link to="/kids">
             <div className={`${classes.catContainerKids}`}>
-              <KidsDropdown />
+              {(!inMobile) ? <KidsDropdown /> : (
+                <Link to="/kids">
+                  <span className={`${classes.catContainerKids}`}>KIDS</span>
+                </Link>
+              )}
             </div>
           </Link>
         </li>
-        <li className="nav_items">
+        <li className="navItems">
           <Link to="/home">
             <div className={`${classes.catContainerHome}`}>
-              <HomeDropdown />
+              {(!inMobile) ? <HomeDropdown /> : (
+                <Link to="/home">
+                  <span className={`${classes.catContainerHome}`}>HOME & LIVING</span>
+                </Link>
+              )}
             </div>
           </Link>
         </li>
-        <li className="nav_items">
+        <li className="navItems">
           <Link to="/beauty">
             <div className={`${classes.catContainerBeauty}`}>
-              <BeautyDropdown />
+              {(!inMobile) ? <BeautyDropdown /> : (
+                <Link to="/beauty">
+                  <span className={`${classes.catContainerBeauty}`}>BEAUTY</span>
+                </Link>
+              )}
             </div>
           </Link>
         </li>
-        <li className="nav_items">
+        <li className="navItems">
           <Link to="/studio">
             <div className={`${classes.catContainerStudio}`}>
-              <StudioDropdown />
+              {(!inMobile) ? <StudioDropdown /> : (
+                <Link to="/studio">
+                  <span className={`${classes.catContainerStudio}`}>STUDIO</span>
+                </Link>
+              )}
             </div>
           </Link>
         </li>
       </ul>
-      <div className="header_search">
+      <div className="headerSearch">
         <div className={classes.searchIcon}>
           <SearchIcon fontSize="medium" style={{ color: '#7e7f92' }} />
         </div>
         <input type="text" placeholder="Search for products, brands and more" />
       </div>
 
-      <div className="header_icons">
-        <Link to="profile">
-          <div className="header_user">
+      <div className="headerIcons">
+        <div>
+          <div className="headerUser">
             <span>&nbsp;&nbsp;&nbsp;Profile</span>
             <Profile />
           </div>
-        </Link>
+        </div>
         <Link to="wishlist">
-          <div className="header_user">
-            <FavoriteBorderIcon className="header_identity" />
+          <div className="headerUser">
+            <FavoriteBorderIcon className="headerIdentity" />
             <span>Whislist</span>
           </div>
         </Link>
         <Link to="cart">
-          <div className="header_user">
-            <ShoppingBagOutlinedIcon className="header_identity" />
+          <div className="headerUser">
+            <ShoppingBagOutlinedIcon className="headerIdentity" />
             <span>Bag</span>
           </div>
         </Link>

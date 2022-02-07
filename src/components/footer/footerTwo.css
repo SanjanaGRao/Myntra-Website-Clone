@@ -12,35 +12,35 @@
     padding-right: 4rem;
 }
 
-.first_postfooter{
+.firstPostfooter{
     margin-bottom: 1rem;
 }
-.postfooter_heading{
+.postfooterHeading{
     color:#535766;
     font-size:0.9rem;
     margin-bottom: 0.5rem;
 }
-.postfooter_para{
+.postfooterPara{
     color:#696b79;
     font-size:0.8rem;
 }
-.postfooter_inside{
+.postfooterInside{
     display: flex;
     margin:1rem 0rem 1rem 2rem;
 }
-.postfooter_inside  li{
+.postfooterInside  li{
     color:#2a2c3f;
     margin-bottom: 0.5rem;
     font-size:0.9rem;
 }
-.postfooter_inside  span{
+.postfooterInside  span{
     color:#696b79;
     font-size:0.8rem
 }
 
 
 @media screen and (max-width:568px) {
-    .first_postfooter{
+    .firstPostfooter{
         margin: 0;
     }
     .postfooter{

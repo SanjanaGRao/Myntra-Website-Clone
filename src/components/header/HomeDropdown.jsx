@@ -1,3 +1,9 @@
+/**
+* Dropdown of the menu 'Home & Living' of the Myntra Website
+* Gives the dropdown menu of the category 'Home & Living' and has various sub-categories
+* @returns the dropdown menu with sub-categories
+* @author Sanjana Rao
+*/
 import * as React from 'react';
 import './appbar.css';
 import Box from '@mui/material/Box';
@@ -10,6 +16,9 @@ import { makeStyles } from '@material-ui/core';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
 
+/**
+ * @description Makes use of makeStyles from MUI to generate custom styling to components
+ */
 const useStyles = makeStyles(() => ({
   catContainerHome: {
     paddingTop: '1.65em',
@@ -26,6 +35,9 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+/**
+ * @description Makes use of styled from MUI to generate custom styling to Menu items
+ */
 const MenuBold = styled(MenuItem)(() => ({
   fontSize: '14px',
   paddingTop: '2px',
@@ -41,6 +53,9 @@ const MenuBold = styled(MenuItem)(() => ({
   },
 }));
 
+/**
+ * @description Makes use of styled from MUI to generate custom styling to Menu items
+ */
 const MenuBold2 = styled(MenuItem)(() => ({
   fontSize: '14px',
   paddingTop: '2px',
@@ -56,6 +71,9 @@ const MenuBold2 = styled(MenuItem)(() => ({
   },
 }));
 
+/**
+ * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
+ */
 const Heading = styled(MenuItem)(() => ({
   fontSize: '14px',
   fontFamily:
@@ -67,6 +85,9 @@ const Heading = styled(MenuItem)(() => ({
   },
 }));
 
+/**
+ * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
+ */
 const Heading2 = styled(MenuItem)(() => ({
   fontSize: '14px',
   fontFamily:
@@ -78,6 +99,9 @@ const Heading2 = styled(MenuItem)(() => ({
   },
 }));
 
+/**
+ * @description Function to draw a line with certain specifications
+ */
 function ColoredLine({ color }) {
   return (
     <hr
@@ -92,13 +116,17 @@ function ColoredLine({ color }) {
 
 export default function HomeDropdown() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [dropDownOpen, setDropDownOpen] = React.useState(null);
+  const open = Boolean(dropDownOpen);
+
+  // Function for the dropdown menus to show when clicked
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setDropDownOpen(event.currentTarget);
   };
+
+  // Function for the dropdown menu to close when not needed
   const handleClose = () => {
-    setAnchorEl(null);
+    setDropDownOpen(null);
   };
 
   return (
@@ -107,13 +135,13 @@ export default function HomeDropdown() {
         <Tooltip>
           <IconButton
             onClick={handleClick}
-            className="nav_items"
+            className="navItems"
             onMouseOver={handleClick}
             size="small"
             sx={{ ml: 2 }}
             aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
+            aria-expanded={open ? 'true' : 'false'}
           >
             <div className={`${classes.catContainerHome}`}>
               <span>
@@ -124,7 +152,7 @@ export default function HomeDropdown() {
         </Tooltip>
       </Box>
       <Menu
-        anchorEl={anchorEl}
+        anchorEl={dropDownOpen}
         id="account-menu"
         open={open}
         onClose={handleClose}

@@ -1,12 +1,19 @@
+/**
+* Footer of the Myntra Website
+* The footer in the website is too big, therefore it is broken down into 2 components
+* This function combines both the footer components
+* @returns merged footer components
+* @author Sanjana Rao
+*/
 import React from 'react';
-import Footer1 from './Footer1';
-import Footer2 from './Footer2';
+import FooterOne from './FooterOne';
+import FooterTwo from './FooterTwo';
 
 export default function FooterMain() {
   return (
     <div style={{ paddingTop: '1.5em' }}>
-      <Footer1 />
-      <Footer2 />
+      <FooterOne />
+      <FooterTwo />
     </div>
   );
 }

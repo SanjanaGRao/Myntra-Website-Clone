@@ -2,90 +2,90 @@
   background-color: #fafbfc;
   height: 100%;
 }
-.footer_first {
+.footerFirst {
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
 }
-.footer_heading {
+.footerHeading {
   color: #2a2c3f;
   text-transform: uppercase;
   font-size: 12px;
   margin-bottom: 1rem;
 }
 
-.footer_items {
+.footerItems {
   list-style: none;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: #696b79;
 }
-.footer_items a {
+.footerItems a {
   color: #696b79;
   text-decoration: none;
 }
-.footer_items_span {
+.footerItemsSpan {
   background-color: red;
   color: #fff;
   padding: 0px 5px;
   text-align: left;
   border-radius: 10px;
 }
-.footer_img {
+.footerImg {
   display: flex;
   cursor: pointer;
   margin-bottom: 2rem;
 }
 
 .MuiSvgIcon-root {
-  color: #696b79 !important;
-  font-size: 1.7rem !important;
+  color: #696b79 ;
+  font-size: 1.7rem ;
   margin: 0px 10px 0px 0px;
 }
 
-.footer_img .demo {
+.footerImg .demo {
   margin: 0px 5px 0px 0px;
   height: 42px;
   object-fit: contain;
 }
-.footer_second {
+.footerSecond {
   display: flex;
   flex-direction: column;
   align-items: left;
   padding-top: 2em;
 }
 
-.inside_footer_second {
+.insideFooterSecond {
   display: flex;
   margin-bottom: 1rem;
   align-items: left;
 }
-.inside_footer_second img {
+.insideFooterSecond img {
   width: 60px;
   height: 50px;
   object-fit: contain;
 }
 
-.inside_footer_second p {
+.insideFooterSecond p {
   color: #696b79;
   font-size: 0.9rem;
   font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
-.inside_footer_second p span {
+.insideFooterSecond p span {
   color: #2a2c3f;
   font-weight: 900;
   font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 
-.footer_middle {
+.footerMiddle {
   margin: 2rem 3rem;
   padding: 0rem 4rem;
 }
-.footer_middle_head {
+.footerMiddleHead {
   position: relative;
 }
 
-.footer_middle_head::after {
+.footerMiddleHead::after {
   content: "";
   position: absolute;
   /* width: 900px; */
@@ -94,52 +94,52 @@
   margin-left: 5px;
   background-color: #eaeaec;
 }
-.footer_middle_links {
+.footerMiddleLinks {
   color: #696b79;
   margin: 1px;
   text-decoration: none;
   font-size: 0.9rem;
 }
-.footer_middle_links > span {
+.footerMiddleLinks > span {
   color: #696b79;
 }
-.footer_middle_para {
+.footerMiddlePara {
   display: flex;
   justify-content: space-between;
   align-items: left;
   margin: 2rem 0rem;
 }
 
-.footer_middle_para > p {
+.footerMiddlePara > p {
   color: #696b79;
 }
-.footer_middle_para p a {
+.footerMiddlePara p a {
   text-decoration: none;
   font-size: 1rem;
   color: blue;
   font-weight: 800;
 }
 
-.footer_last {
+.footerLast {
   display: flex;
   margin-bottom: 1rem;
   justify-content: space-between;
 }
-.footer_last > div > span {
+.footerLast > div > span {
   color: #696b79;
   font-size: 0.9rem;
 }
-.footer_last > div > p {
+.footerLast > div > p {
     color: #696b79;
     font-size: 0.9rem;
   }
-.footer_last_inside {
+.footerLastInside {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.footer_last_inside span {
+.footerLastInside span {
   color: #526CD0;
   font-size: 1rem;
   font-weight: 700;
@@ -147,33 +147,33 @@
 }
 
 @media screen and (max-width: 1175px) {
-  .footer_first {
+  .footerFirst {
     flex-wrap: wrap;
   }
-  .footer_middle_head::after {
+  .footerMiddleHead::after {
     width: 500px;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .footer_first {
+  .footerFirst {
     flex-wrap: wrap;
   }
-  .footer_middle_head::after {
+  .footerMiddleHead::after {
     width: 300px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .footer_middle {
+  .footerMiddle {
     margin: 1.5rem 2rem;
     padding: 0rem 2rem;
   }
 
-  .footer_last {
+  .footerLast {
     flex-wrap: wrap;
   }
-  .footer_middle_head::after {
+  .footerMiddleHead::after {
     display: none;
   }
 }
@@ -182,13 +182,13 @@
   .footer {
     padding: 0.5rem 0;
   }
-  .footer_first {
+  .footerFirst {
     margin: 0.6rem;
   }
 }
 
 @media screen and (max-width: 280px) {
-  .footer_img .demo {
+  .footerImg .demo {
     width: 90px;
   }
 }

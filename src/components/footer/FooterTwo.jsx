@@ -1,15 +1,21 @@
+/**
+* Footer of the Myntra Website
+* This is the second footer component
+* @returns the second half of the footer component to FooterMain function
+* @author Sanjana Rao
+*/
 import React from 'react';
-import './footer2.css';
+import './footerTwo.css';
 
 export default function Footer2() {
   return (
     <div className="footer">
       <div className="postfooter">
-        <div className="first_postfooter">
-          <h5 className="postfooter_heading">
+        <div className="firstPostfooter">
+          <h5 className="postfooterHeading">
             ONLINE SHOPPING MADE EASY AT MYNTRA
           </h5>
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             If you would like to experience the best of online shopping for men,
             women and kids in India, you are at the right place. Myntra is the
             ultimate destination for fashion and lifestyle, being host to a wide
@@ -21,17 +27,17 @@ export default function Footer2() {
             your home and get your favourites delivered right to your doorstep.
           </p>
         </div>
-        <div className="first_postfooter">
-          <h5 className="postfooter_heading">
+        <div className="firstPostfooter">
+          <h5 className="postfooterHeading">
             BEST ONLINE SHOPPING SITE IN INDIA FOR FASHION
           </h5>
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             Be it clothing, footwear or accessories, Myntra offers you the ideal
             combination of fashion and functionality for men, women and kids. You
             will realise that the sky is the limit when it comes to the types of
             outfits that you can purchase for different occasions.
           </p>
-          <div className="postfooter_inside">
+          <div className="postfooterInside">
             <ol>
               <li>
                 <b>Smart men&apos;s clothing - </b>
@@ -122,7 +128,7 @@ export default function Footer2() {
             </ol>
           </div>
 
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             Myntra is one of the best online shopping sites in India which could
             help transform your living spaces completely. Add colour and
             personality to your bedrooms with bed linen and curtains. Use smart
@@ -132,11 +138,11 @@ export default function Footer2() {
           </p>
         </div>
 
-        <div className="first_postfooter">
-          <h5 className="postfooter_heading">
+        <div className="firstPostfooter">
+          <h5 className="postfooterHeading">
             AFFORDABLE FASHION AT YOUR FINGERTIPS
           </h5>
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             Myntra is one of the unique online shopping sites in India where
             fashion is accessible to all. Check out our new arrivals to view the
             latest designer clothing, footwear and accessories in the market. You
@@ -148,16 +154,16 @@ export default function Footer2() {
             unbelievably affordable.
           </p>
         </div>
-        <div className="first_postfooter">
-          <h5 className="postfooter_heading">MYNTRA INSIDER</h5>
-          <p className="postfooter_para">
+        <div className="firstPostfooter">
+          <h5 className="postfooterHeading">MYNTRA INSIDER</h5>
+          <p className="postfooterPara">
             Every online shopping experience is precious. Hence, a cashless
             reward-based customer loyalty program called Myntra Insider was
             introduced to enhance your online experience. The program is
             applicable to every registered customer and measures rewards in the
             form of Insider Points.
           </p>
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             Every online shopping experience is precious. Hence, a cashless
             reward-based customer loyalty program called Myntra Insider was
             introduced to enhance your online experience. The program is
@@ -165,9 +171,9 @@ export default function Footer2() {
             form of Insider Points.
           </p>
         </div>
-        <div className="first_postfooter">
-          <h5 className="postfooter_heading">MYNTRA APP</h5>
-          <p className="postfooter_para">
+        <div className="firstPostfooter">
+          <h5 className="postfooterHeading">MYNTRA APP</h5>
+          <p className="postfooterPara">
             Myntra, India&apos;s no. 1 online fashion destination justifies its
             fashion relevance by bringing something new and chic to the table on
             the daily. Fashion trends seem to change at lightning speed, yet the
@@ -180,9 +186,9 @@ export default function Footer2() {
             experience shopping like never before!
           </p>
         </div>
-        <div className="first_postfooter">
-          <h5 className="postfooter_heading">HISTORY OF MYNTRA</h5>
-          <p className="postfooter_para">
+        <div className="firstPostfooter">
+          <h5 className="postfooterHeading">HISTORY OF MYNTRA</h5>
+          <p className="postfooterPara">
             Becoming India&apos;s no. 1 fashion destination is not an easy feat.
             Sincere efforts, digital enhancements and a team of dedicated
             personnel with an equally loyal customer base have made Myntra the
@@ -196,18 +202,18 @@ export default function Footer2() {
             and tempting, hard-to-say-no-to deals.
           </p>
           <br />
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             The Myntra shopping app came into existence in the year 2015 to
             further encourage customers&apos; shopping sprees. Download the app on
             your Android or IOS device this very minute to experience fashion like
             never before
           </p>
         </div>
-        <div className="first_postfooter">
-          <h5 className="postfooter_heading">
+        <div className="firstPostfooter">
+          <h5 className="postfooterHeading">
             SHOP ONLINE AT MYNTRA WITH COMPLETE CONVENIENCE
           </h5>
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             Another reason why Myntra is the best of all online stores is the
             complete convenience that it offers. You can view your favourite
             brands with price options for different products in one place. A
@@ -220,7 +226,7 @@ export default function Footer2() {
             customer-friendliness to the next level.
           </p>
           <br />
-          <p className="postfooter_para">
+          <p className="postfooterPara">
             Enjoy the hassle-free experience as you shop comfortably from your
             home or your workplace. You can also shop for your friends, family and
             loved-ones and avail our gift services for special occasions.
