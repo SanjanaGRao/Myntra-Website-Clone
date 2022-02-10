@@ -23,6 +23,13 @@ export default function DealsOfTheDay() {
     });
   }, []);
 
+  // useEffect(() => {
+  //   getAllItems(id).then((res) => {
+  //     dispatch(setCategory(res));
+  //   }).catch(() => {
+  //   });
+  // }, []);
+
   const isBrands = useSelector((state) => state.login.brands);
 
   return (

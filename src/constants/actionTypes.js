@@ -12,5 +12,6 @@ const actionTypes = {
   SET_SPORTS_WEAR: 'SET_SPORTS_WEAR',
   SET_FOOTWEAR: 'SET_FOOTWEAR',
   SET_PRODUCTS: 'SET_PRODUCTS',
+  SET_CATEGORY: 'SET_CATEGORY',
 };
 export default actionTypes;

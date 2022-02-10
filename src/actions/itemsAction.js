@@ -1,11 +1,15 @@
 /**
-* Actions for product state
+* Actions for product and category state
 * @author Sanjana Rao
 */
 import actionTypes from '../constants/actionTypes';
 
-const setProducts = (products) => ({
+export const setProducts = (products) => ({
   type: actionTypes.SET_PRODUCTS,
   payload: products,
 });
-export default setProducts;
+
+export const setCategory = (category) => ({
+  type: actionTypes.SET_CATEGORY,
+  payload: category,
+});

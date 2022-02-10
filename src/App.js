@@ -1,6 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Appbar from './components/header/Appbar';
 import FooterMain from './components/footer/FooterMain';
 import Dashboard from './components/dashboard/Dashboard';
@@ -22,5 +22,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
