@@ -9,10 +9,11 @@
 }
 
 .bag {
-  max-width: 1300px;
+  max-width: 2700px;
+  max-height: 1000px;
   display: flex;
-  overflow-x: hidden;
-  margin: 0rem 2rem;
+  overflow-x: hidden; 
+  margin: 0rem 2rem; 
   padding-left: 1em;
 }
 .bag::-webkit-scrollbar {

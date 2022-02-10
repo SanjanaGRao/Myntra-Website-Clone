@@ -12,10 +12,10 @@ import './card.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default function Card({ img }) {
+export default function Card({ img, pageLink }) {
   return (
     <div className="card">
-      <Link to="/men">
+      <Link to={pageLink}>
         <img src={img} alt="card" />
       </Link>
     </div>
@@ -23,4 +23,5 @@ export default function Card({ img }) {
 }
 Card.propTypes = {
   img: PropTypes.string.isRequired,
+  pageLink: PropTypes.string.isRequired,
 };

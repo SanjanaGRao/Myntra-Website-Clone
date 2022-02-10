@@ -4,8 +4,10 @@
 */
 import { combineReducers } from 'redux';
 import reducer from './reducers';
+import itemReducer from './itemReducers';
 
 const reducers = combineReducers({
-  allOffers: reducer,
+  login: reducer,
+  allItems: itemReducer,
 });
 export default reducers;

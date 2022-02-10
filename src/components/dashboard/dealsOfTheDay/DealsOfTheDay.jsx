@@ -1,28 +1,42 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 /**
 * Dashboard of the landing page
 * Gives the card component of the images in Deals Of The Day category
 * @returns the card with images as prop
 * @author Sanjana Rao
 */
-import React from 'react';
+import React, { useEffect } from 'react';
 import './dealsOfTheDay.css';
-import Card from '../Card';
-import deal1 from '../../../assets/deals_1.webp';
-import deal2 from '../../../assets/deals_2.webp';
-import deal3 from '../../../assets/deals_3.webp';
-import deal4 from '../../../assets/deals_4.webp';
-import deal5 from '../../../assets/deals_5.webp';
+import { useDispatch, useSelector } from 'react-redux';
+import Cards from '../Card';
+import { getTopBrandsImage } from '../../../service/offerService';
+import { topBrands } from '../../../actions/userActions';
 
 export default function DealsOfTheDay() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getTopBrandsImage().then((res) => {
+      dispatch(topBrands(res));
+    }).catch(() => {
+    });
+  }, []);
+
+  const isBrands = useSelector((state) => state.login.brands);
+
   return (
     <>
       <h4 className="dealsofdayHeading">Deals of the Day</h4>
       <div className="dealsofday">
-        <Card img={deal1} />
-        <Card img={deal2} />
-        <Card img={deal3} />
-        <Card img={deal4} />
-        <Card img={deal5} />
+        { Object.keys(isBrands).length !== 0 ? isBrands.map((item) => (
+          <div className="second">
+            <Cards
+              img={`http://localhost:1337${item.attributes.Image.data.attributes.url}`}
+              pageLink={`/dealsOfDay/${item.id}`}
+            />
+          </div>
+        )) : null }
       </div>
     </>
   );

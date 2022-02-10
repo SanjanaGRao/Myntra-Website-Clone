@@ -15,7 +15,7 @@ import { useHistory } from 'react-router-dom';
 import useForm from '../../utils/formValidation';
 import validate from '../../utils/loginValidation';
 import { signUp } from '../../service/userService';
-import loginStatus from '../../actions/userActions';
+import { loginStatus } from '../../actions/userActions';
 import Appbar from '../header/Appbar';
 import InputBox from '../commonComponents/InputBox';
 import ActionButton from '../commonComponents/ActionButton';

@@ -6,7 +6,7 @@
 * @author Sanjana Rao
 */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './appbar.css';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
@@ -85,10 +85,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Appbar() {
   const [inMobile, setInMobile] = useState(false);
   const classes = useStyles();
+  const history = useHistory();
 
   // Routing Function to go to dashboard
   const landingPage = () => {
-    window.location = '/';
+    history.push('/');
   };
 
   // Function to set the state for mobile view

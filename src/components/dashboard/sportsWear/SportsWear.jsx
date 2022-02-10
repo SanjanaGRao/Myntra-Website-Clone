@@ -4,25 +4,35 @@
 * @returns the card with images as prop
 * @author Sanjana Rao
 */
-import React from 'react';
+import React, { useEffect } from 'react';
 import './sportsWear.css';
+import { useDispatch, useSelector } from 'react-redux';
 import Card from '../Card';
-import sw1 from '../../../assets/sw_1.webp';
-import sw2 from '../../../assets/sw_2.webp';
-import sw3 from '../../../assets/sw_3.webp';
-import sw4 from '../../../assets/sw_4.webp';
-import sw5 from '../../../assets/sw_5.webp';
+import { sportsWear } from '../../../actions/userActions';
+import { getSportsWear } from '../../../service/offerService';
 
 export default function SportsWear() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getSportsWear().then((res) => {
+      dispatch(sportsWear(res));
+    }).catch(() => {
+    });
+  }, []);
+
+  const isSports = useSelector((state) => state.login.sports);
+
   return (
     <>
       <h4 className="sportswearHeading">Trending in Sports Wear</h4>
       <div className="sportswear">
-        <Card img={sw1} />
-        <Card img={sw2} />
-        <Card img={sw3} />
-        <Card img={sw4} />
-        <Card img={sw5} />
+        { Object.keys(isSports).length !== 0 ? isSports.map((item) => (
+          <Card
+            img={`http://localhost:1337${item.attributes.Image.data.attributes.url}`}
+            pageLink={`/sports/${item.id}`}
+          />
+        )) : null }
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import * as React from 'react';
 import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
+import { useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -16,7 +17,10 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import { useHistory } from 'react-router-dom';
+import { loginStatus } from '../../actions/userActions';
 import Neww from '../../assets/new_icon.png';
+import { removeUserSession } from '../../utils/tokenOperations';
 /**
  * @description Makes use of makeStyles from MUI to generate custom styling to components
  */
@@ -60,6 +64,10 @@ export default function Profile() {
   const classes = useStyles();
   const [dropDownOpen, setDropDownOpen] = React.useState(null);
   const open = Boolean(dropDownOpen);
+  const login = useSelector((state) => state.login.isLogin);
+  const userEmail = localStorage.getItem('name');
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   // Function for the dropdown menus to show when clicked
   const handleClick = (event) => {
@@ -74,6 +82,12 @@ export default function Profile() {
   // Function to go to login page when clicked
   const loginPage = () => {
     window.location = '/login';
+  };
+
+  const handleLogout = () => {
+    removeUserSession();
+    dispatch(loginStatus());
+    history.push('/');
   };
 
   return (
@@ -129,7 +143,7 @@ export default function Profile() {
             },
           },
         }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
       >
         <span className={classes.catContainerProfile}>
           {' '}
@@ -137,17 +151,28 @@ export default function Profile() {
           {' '}
         </span>
         <br />
-        <span
-          className={classes.catContainerProfile}
-        >
-          {' '}
-          To access account and manage orders &nbsp;&nbsp;&nbsp;&nbsp;
-          {' '}
-        </span>
-        <br />
-        <div style={{ paddingTop: '0.5em', paddingLeft: '1.3em' }}>
-          <LoginButton variant="outlined" onClick={loginPage}><b>LOGIN / SIGNUP</b></LoginButton>
-        </div>
+        { (login) ? (
+          <>
+            <span className={classes.catContainerProfile}>{userEmail}</span>
+            <br />
+          </>
+        )
+          : (
+            <>
+              <span
+                className={classes.catContainerProfile}
+              >
+                {' '}
+                To access account and manage orders &nbsp;&nbsp;&nbsp;&nbsp;
+                {' '}
+              </span>
+              <br />
+              <div style={{ paddingTop: '0.5em', paddingLeft: '1.3em' }}>
+                <LoginButton variant="outlined" onClick={loginPage}><b>LOGIN / SIGNUP</b></LoginButton>
+              </div>
+
+            </>
+          )}
         <br />
         <Divider />
         <MenuBold>
@@ -172,8 +197,9 @@ export default function Profile() {
         </MenuBold>
         <MenuBold>
           {' '}
-          Myntra Insider &nbsp;&nbsp;
+          Myntra Insider &nbsp;
           <img src={Neww} alt="new_icon" className="new_icon_logo" />
+          {' '}
         </MenuBold>
         <Divider />
         <MenuBold>
@@ -191,7 +217,7 @@ export default function Profile() {
           Saved Addresses
           {' '}
         </MenuBold>
-        <MenuBold>
+        <MenuBold onClick={handleLogout}>
           {' '}
           Logout
           {' '}

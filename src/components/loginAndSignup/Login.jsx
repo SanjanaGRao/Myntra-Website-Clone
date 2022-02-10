@@ -15,7 +15,7 @@ import { useHistory } from 'react-router-dom';
 import useForm from '../../utils/formValidation';
 import validate from '../../utils/loginValidation';
 import { login } from '../../service/userService';
-import loginStatus from '../../actions/userActions';
+import { loginStatus } from '../../actions/userActions';
 import Appbar from '../header/Appbar';
 import InputBox from '../commonComponents/InputBox';
 import ActionButton from '../commonComponents/ActionButton';
@@ -105,7 +105,7 @@ export default function Login() {
   const handleLogin = () => {
     login(values.email, values.password);
     dispatch(loginStatus());
-    setLoading(false);
+    setLoading(true);
     history.push('/');
   };
   const {
@@ -120,6 +120,7 @@ export default function Login() {
     window.location = '/signup';
   };
 
+  localStorage.setItem('name', values.email);
   return (
     <div className={classes.root}>
       <div><Appbar /></div>

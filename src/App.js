@@ -6,6 +6,7 @@ import FooterMain from './components/footer/FooterMain';
 import Dashboard from './components/dashboard/Dashboard';
 import Login from './components/loginAndSignup/Login';
 import Signup from './components/loginAndSignup/Signup';
+import Products from './pages/Products';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" exact component={FooterMain} />
         <Route path="/login" exact component={Login} />
         <Route path="/signup" exact component={Signup} />
+        <Route path="/dealsOfDay/:id" exact component={Products} />
       </Router>
     </div>
   );

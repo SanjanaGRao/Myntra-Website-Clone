@@ -19,6 +19,7 @@
   width: 0px;
 }
 
+
 .biggestdealSecond {
   max-width: 1300px;
   overflow-x: hidden;
@@ -27,6 +28,10 @@
 }
 .biggestdealSecond::-webkit-scrollbar {
   width: 0px;
+}
+.css-o69gx8-MuiCardMedia-root {
+  width: 198;
+  height: 300;
 }
 
 @media screen and (max-width: 1150px) {

@@ -4,27 +4,35 @@
 * @returns the card with images as prop
 * @author Sanjana Rao
 */
-import React from 'react';
+import React, { useEffect } from 'react';
 import './luxe.css';
+import { useDispatch, useSelector } from 'react-redux';
 import Card from '../Card';
-import img1 from '../../../assets/luxe_1.webp';
-import img2 from '../../../assets/luxe_2.webp';
-import img3 from '../../../assets/luxe_3.webp';
-import img4 from '../../../assets/luxe_4.webp';
-import img5 from '../../../assets/luxe_5.webp';
-import img6 from '../../../assets/luxe_6.webp';
+import { getLuxe } from '../../../service/offerService';
+import { luxe } from '../../../actions/userActions';
 
 export default function Luxe() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getLuxe().then((res) => {
+      dispatch(luxe(res));
+    }).catch(() => {
+    });
+  }, []);
+
+  const isluxe = useSelector((state) => state.login.luxe);
+
   return (
     <>
       <h4 className="heading">Myntra Luxe</h4>
       <div className="luxe">
-        <Card img={img1} />
-        <Card img={img2} />
-        <Card img={img3} />
-        <Card img={img4} />
-        <Card img={img5} />
-        <Card img={img6} />
+        { Object.keys(isluxe).length !== 0 ? isluxe.map((item) => (
+          <Card
+            img={`http://localhost:1337${item.attributes.Image.data.attributes.url}`}
+            pageLink={`/luxe/${item.id}`}
+          />
+        )) : null }
       </div>
     </>
   );
