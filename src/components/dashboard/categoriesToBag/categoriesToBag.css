@@ -69,3 +69,22 @@
     overflow-x: auto;
   }
 }
+
+
+@media screen and (max-width: 375px) {
+  .bagHeading {
+    font-size: 1rem;
+  }
+  .bag {
+    max-width: inherit;
+    overflow-x: hidden;
+    display: flex;
+    margin: auto;
+  }
+  .biggestdealsecond {
+    max-width: inherit;
+    overflow-x: hidden;
+    display: flex;
+    margin: auto;
+  }
+}

@@ -50,3 +50,15 @@
     font-size: 1rem;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .dealsofdayHeading {
+    font-size: 1rem;
+  }
+  .dealsofday {
+    max-width: inherit;
+    overflow-x: hidden;
+    display: flex;
+    margin: auto;
+  }
+}

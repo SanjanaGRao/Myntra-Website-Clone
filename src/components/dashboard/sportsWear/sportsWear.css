@@ -53,3 +53,15 @@
         font-size: 1rem;
     }
 }
+
+@media screen and (max-width: 375px) {
+    .sportswearHeading {
+      font-size: 1rem;
+    }
+    .sportswear {
+        max-width: inherit;
+        overflow-x: hidden;
+        display: flex;
+        margin: auto;
+    }
+  }

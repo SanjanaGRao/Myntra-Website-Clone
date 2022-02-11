@@ -66,9 +66,27 @@
     font-size: 1rem;
   }
   .biggestdeal {
-    overflow-x: auto;
+    overflow-x: clip;
   }
   .biggestdealSecond {
-    overflow-x: auto;
+    overflow-x: clip;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .biggestdealHeading {
+    font-size: 1rem;
+  }
+  .biggestdeal {
+    max-width: inherit;
+    overflow-x: hidden;
+    display: flex;
+    margin: auto;
+  }
+  .biggestdealSecond {
+    max-width: inherit;
+    overflow-x: hidden;
+    display: flex;
+    margin: auto;
   }
 }

@@ -98,10 +98,12 @@
   font-size: 14px;
   overflow: initial;
   padding: 1em;
+  background-color: #fff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .dropdown:hover .dropdownContent {
   display: block;
+  background-color: #fff;
 }
 .dropdownContent option {
   display: block;
@@ -111,5 +113,5 @@
 }
 .dropdownContent option:hover {
   color: #282c3f;
-  background-color: #e9e9ed;
+  background-color: #f0f0f5;
 }

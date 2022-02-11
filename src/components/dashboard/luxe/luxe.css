@@ -43,4 +43,16 @@
       font-size: 1rem;
     }
   }
+
+  @media screen and (max-width: 375px) {
+    .heading {
+      font-size: 1rem;
+    }
+    .luxe {
+      max-width: inherit;
+    overflow-x: hidden;
+    display: flex;
+    margin: auto;
+    }
+  }
   

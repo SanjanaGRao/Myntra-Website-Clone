@@ -33,12 +33,10 @@ export default function BiggestDeal() {
       <h4 className="biggestdealHeading">Biggest Deal on Top Brands</h4>
       <div className="biggestdeal">
         { Object.keys(isTopBrands).length !== 0 ? isTopBrands.map((item) => (
-          <div className="second">
-            <Card
-              img={`http://localhost:1337${item.attributes.Image.data.attributes.url}`}
-              pageLink={`/biggestDeal/${item.id}`}
-            />
-          </div>
+          <Card
+            img={`http://localhost:1337${item.attributes.Image.data.attributes.url}`}
+            pageLink={`/biggestDeal/${item.id}`}
+          />
         )) : null }
       </div>
       <div className="biggestdealSecond">

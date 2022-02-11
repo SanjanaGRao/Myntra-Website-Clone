@@ -11,11 +11,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import './products.css';
 import { Link, useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
-import Appbar from '../components/header/Appbar';
-import ProductCard from '../components/productCard/ProductCard';
-import getAllItems from '../service/productService';
-import Footer from '../components/footer/FooterMain';
-import { setProducts } from '../actions/itemsAction';
+import Appbar from '../../components/header/Appbar';
+import ProductCard from '../../components/productCard/ProductCard';
+import getAllItems from '../../service/productService';
+import Footer from '../../components/footer/FooterMain';
+import { setProducts } from '../../actions/itemsAction';
 
 export default function Products() {
   const dispatch = useDispatch();

@@ -23,13 +23,6 @@ export default function DealsOfTheDay() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   getAllItems(id).then((res) => {
-  //     dispatch(setCategory(res));
-  //   }).catch(() => {
-  //   });
-  // }, []);
-
   const isBrands = useSelector((state) => state.login.brands);
 
   return (
@@ -37,12 +30,10 @@ export default function DealsOfTheDay() {
       <h4 className="dealsofdayHeading">Deals of the Day</h4>
       <div className="dealsofday">
         { Object.keys(isBrands).length !== 0 ? isBrands.map((item) => (
-          <div className="second">
-            <Cards
-              img={`http://localhost:1337${item.attributes.Image.data.attributes.url}`}
-              pageLink={`/dealsOfDay/${item.id}`}
-            />
-          </div>
+          <Cards
+            img={`http://localhost:1337${item.attributes.Image.data.attributes.url}`}
+            pageLink={`/dealsOfDay/${item.id}`}
+          />
         )) : null }
       </div>
     </>
