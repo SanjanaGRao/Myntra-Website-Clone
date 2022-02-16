@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable react/button-has-type */
 /**
 * List of Products of certain category
 * Currently, this is implemented only for the category - "Deals of The Day"
@@ -76,7 +74,7 @@ export default function Products() {
                 </select>
               </div>
               <div className="dropdown">
-                <button>
+                <button type="button">
                   Sort by :
                   {' '}
                   <strong>Recommended</strong>

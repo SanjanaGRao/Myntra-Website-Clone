@@ -17,6 +17,7 @@
   padding-top: 1em;
   padding-left: 2em;
   line-height: 1;
+  background-color: white;
 }
 .topText a {
   color: #282c3f;
@@ -114,4 +115,22 @@
 .dropdownContent option:hover {
   color: #282c3f;
   background-color: #f0f0f5;
+}
+
+@media screen and (max-width: 1024px) {
+  .dropdown button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .dropdown button {
+    display: none;
+  }
 }

@@ -29,12 +29,12 @@ const useStyles = makeStyles(() => ({
     fontSize: '14px',
     lineHeight: '1',
     marginBottom: '0',
-    marginTop: '0',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     fontWeight: '400',
     display: 'block',
+    marginTop: '0',
     fontFamily: 'Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
   },
   description: {
@@ -101,7 +101,7 @@ const useStyles = makeStyles(() => ({
   ratingBox: {
     zIndex: '1',
     position: 'absolute',
-    marginLeft: '10px',
+    marginLeft: '15px',
     fontSize: '12px',
     fontWeight: 500,
     display: 'flex',

@@ -7,30 +7,28 @@ import axios from 'axios';
 import { setUserSession } from '../utils/tokenOperations';
 
 // Function to enable the user to login by connecting strapi
-export async function login(email, password) {
-  try {
-    const { data } = await axios.post('http://localhost:1337/api/auth/local', {
-      identifier: email,
-      password,
-    });
+export function loginUser(email, password) {
+  return axios.post('http://localhost:1337/api/auth/local', {
+    identifier: email,
+    password,
+  }).then((data) => {
     setUserSession(data.data.jwt);
     return data;
-  } catch (error) {
-    return error;
-  }
+  }).catch((err) => {
+    throw err;
+  });
 }
 
 // Function to enable the user to create an account by connecting strapi
-export async function signUp(username, email, password) {
-  try {
-    const data = await axios.post('http://localhost:1337/api/auth/local/register', {
-      username: username.substring(0, username.indexOf(' ')),
-      email,
-      password,
-    });
+export function signUpUser(username, email, password) {
+  return axios.post('http://localhost:1337/api/auth/local/register', {
+    username,
+    email,
+    password,
+  }).then((data) => {
     setUserSession(data.data.jwt);
     return data;
-  } catch (error) {
-    return error;
-  }
+  }).catch((err) => {
+    throw err;
+  });
 }

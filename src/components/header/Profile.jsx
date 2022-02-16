@@ -9,56 +9,17 @@ import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import { useDispatch, useSelector } from 'react-redux';
-import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import { makeStyles } from '@material-ui/core';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import Tooltip from '@mui/material/Tooltip';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
 import { useHistory } from 'react-router-dom';
 import { loginStatus } from '../../actions/userActions';
 import Neww from '../../assets/new_icon.png';
 import { removeUserSession } from '../../utils/tokenOperations';
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  catContainerProfile: {
-    fontSize: '14px',
-    paddingLeft: '1.3em',
-    fontFamily:
-              ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-    color: '#3e4152',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to a button
- */
-const LoginButton = styled(Button)(() => ({
-  color: '#ff3f6c',
-  borderColor: '#eaeaec',
-  borderRadius: '2px',
-  '&:hover': {
-    borderColor: '#ff3f6c',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily: ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'white',
-  },
-}));
+import {
+  useStyles, MenuBoldProfile, LoginButton,
+} from './styles';
 
 export default function Profile() {
   const classes = useStyles();
@@ -152,13 +113,13 @@ export default function Profile() {
         </span>
         <br />
         { (login) ? (
-          <>
+          <div>
             <span className={classes.catContainerProfile}>{userEmail}</span>
             <br />
-          </>
+          </div>
         )
           : (
-            <>
+            <div>
               <span
                 className={classes.catContainerProfile}
               >
@@ -170,58 +131,57 @@ export default function Profile() {
               <div style={{ paddingTop: '0.5em', paddingLeft: '1.3em' }}>
                 <LoginButton variant="outlined" onClick={loginPage}><b>LOGIN / SIGNUP</b></LoginButton>
               </div>
-
-            </>
+            </div>
           )}
         <br />
         <Divider />
-        <MenuBold>
+        <MenuBoldProfile>
           {' '}
           Orders
           {' '}
-        </MenuBold>
-        <MenuBold>
+        </MenuBoldProfile>
+        <MenuBoldProfile>
           {' '}
           Wishlist
           {' '}
-        </MenuBold>
-        <MenuBold>
+        </MenuBoldProfile>
+        <MenuBoldProfile>
           {' '}
           Gift Cards
           {' '}
-        </MenuBold>
-        <MenuBold>
+        </MenuBoldProfile>
+        <MenuBoldProfile>
           {' '}
           Contact Us
           {' '}
-        </MenuBold>
-        <MenuBold>
+        </MenuBoldProfile>
+        <MenuBoldProfile>
           {' '}
           Myntra Insider &nbsp;
           <img src={Neww} alt="new_icon" className="new_icon_logo" />
           {' '}
-        </MenuBold>
+        </MenuBoldProfile>
         <Divider />
-        <MenuBold>
+        <MenuBoldProfile>
           {' '}
           Myntra Credit
           {' '}
-        </MenuBold>
-        <MenuBold>
+        </MenuBoldProfile>
+        <MenuBoldProfile>
           {' '}
           Coupons
           {' '}
-        </MenuBold>
-        <MenuBold>
+        </MenuBoldProfile>
+        <MenuBoldProfile>
           {' '}
           Saved Addresses
           {' '}
-        </MenuBold>
-        <MenuBold onClick={handleLogout}>
+        </MenuBoldProfile>
+        <MenuBoldProfile onClick={handleLogout}>
           {' '}
           Logout
           {' '}
-        </MenuBold>
+        </MenuBoldProfile>
       </Menu>
     </>
   );

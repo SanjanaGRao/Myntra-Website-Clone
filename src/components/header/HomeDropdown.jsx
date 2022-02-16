@@ -8,96 +8,13 @@ import * as React from 'react';
 import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
-import { makeStyles } from '@material-ui/core';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
-
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  catContainerHome: {
-    paddingTop: '1.65em',
-    color: '#282c3f',
-    fontSize: '14px',
-    letterSpacing: '0.5px',
-    fontFamily:
-      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    '&:hover ': {
-      borderBottom: '4px solid #f2c210',
-    },
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'white',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#f2c210',
-  '&:hover': {
-    color: '#f2c210',
-    background: '#fff',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#f2c210',
-  '&:hover': {
-    color: '#f2c210',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
+import {
+  useStyles, MenuBold, MenuBold2, HeadingHome, HeadingHome2,
+} from './styles';
 
 /**
  * @description Function to draw a line with certain specifications
@@ -198,9 +115,9 @@ export default function HomeDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingHome>
                 <b>Bed Linen & Furnishing </b>
-              </Heading>
+              </HeadingHome>
               <MenuBold> Bedsheets</MenuBold>
               <MenuBold> Bedding Sets</MenuBold>
               <MenuBold> Blankets, Quilts & Dohars</MenuBold>
@@ -210,9 +127,9 @@ export default function HomeDropdown() {
               <MenuBold> Chair Pads & Covers</MenuBold>
               <MenuBold> Sofa Covers </MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingHome>
                 <b>Flooring </b>
-              </Heading>
+              </HeadingHome>
               <MenuBold>Carpets</MenuBold>
               <MenuBold>Floor Mats & Dhurries</MenuBold>
               <MenuBold>Door Mats</MenuBold>
@@ -227,9 +144,9 @@ export default function HomeDropdown() {
                 width: '220px',
               }}
             >
-              <Heading2>
+              <HeadingHome2>
                 <b>Bath </b>
-              </Heading2>
+              </HeadingHome2>
               <MenuBold2>Bath Towels</MenuBold2>
               <MenuBold2>Hand & Face Towels</MenuBold2>
               <MenuBold2>Beach Towels</MenuBold2>
@@ -239,9 +156,9 @@ export default function HomeDropdown() {
               <MenuBold2>Bathroom Accessories</MenuBold2>
               <MenuBold2>Shower Curtains</MenuBold2>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingHome2>
                 <b>Lamps & Lighting </b>
-              </Heading2>
+              </HeadingHome2>
               <MenuBold2>Floor Lamps</MenuBold2>
               <MenuBold2>Ceiling Lamps</MenuBold2>
               <MenuBold2>Table Lamps</MenuBold2>
@@ -259,9 +176,9 @@ export default function HomeDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingHome>
                 <b>Home Décor </b>
-              </Heading>
+              </HeadingHome>
               <MenuBold> Plants & Planters</MenuBold>
               <MenuBold> Aromas & Candles</MenuBold>
               <MenuBold> Clocks</MenuBold>
@@ -273,15 +190,15 @@ export default function HomeDropdown() {
               <MenuBold> Fountains</MenuBold>
               <MenuBold> Showpieces & Vases</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingHome>
                 <b>Cushions & Cushion Covers </b>
-              </Heading>
-              <Heading>
+              </HeadingHome>
+              <HeadingHome>
                 <b>Curtains </b>
-              </Heading>
-              <Heading>
+              </HeadingHome>
+              <HeadingHome>
                 <b>Home Gift Set </b>
-              </Heading>
+              </HeadingHome>
             </div>
           </Grid>
           <Grid item>
@@ -293,9 +210,9 @@ export default function HomeDropdown() {
                 width: '220px',
               }}
             >
-              <Heading2>
+              <HeadingHome2>
                 <b>Kitchen & Table </b>
-              </Heading2>
+              </HeadingHome2>
               <MenuBold2>Dinnerware & Serveware</MenuBold2>
               <MenuBold2>Cups and Mugs</MenuBold2>
               <MenuBold2>Bakeware & Cookware</MenuBold2>
@@ -303,9 +220,9 @@ export default function HomeDropdown() {
               <MenuBold2>Bar & Drinkware</MenuBold2>
               <MenuBold2>Table Covers & Furnishings</MenuBold2>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingHome2>
                 <b>Storeage </b>
-              </Heading2>
+              </HeadingHome2>
               <MenuBold2>Organisers</MenuBold2>
               <MenuBold2>Hooks & Holders</MenuBold2>
               <MenuBold2>Laundry Bags</MenuBold2>
@@ -320,9 +237,9 @@ export default function HomeDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingHome>
                 <b>Brands </b>
-              </Heading>
+              </HeadingHome>
               <MenuBold>Home Centre</MenuBold>
               <MenuBold>Spaces</MenuBold>
               <MenuBold>D&apso;Decor</MenuBold>

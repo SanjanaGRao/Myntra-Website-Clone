@@ -10,53 +10,11 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
-import { makeStyles } from '@material-ui/core';
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import StudioImg from '../../assets/studio_img.png';
-
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  catContainerStudio: {
-    paddingTop: '1.65em',
-    color: '#282c3f',
-    fontSize: '14px',
-    letterSpacing: '0.5px',
-    fontFamily:
-      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    '&:hover ': {
-      borderBottom: '4px solid #ee5f73',
-    },
-  },
-  newSign: {
-    color: '#ff3f6c',
-    top: '-0.4rem',
-    fontSize: '65%',
-    lineHeight: '0',
-    position: 'relative',
-    verticalAlign: 'baseline',
-    textTransform: 'uppercase',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to a button
- */
-const ExploreButton = styled(Button)(() => ({
-  color: 'black',
-  fontFamily:
-      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
-  border: '1px solid #d4d5d8',
-  borderRadius: '2px',
-  '&:hover': {
-    borderColor: '#d4d5d8',
-  },
-}));
+import {
+  useStyles, ExploreButton,
+} from './styles';
 
 export default function StudioDropdown() {
   const classes = useStyles();

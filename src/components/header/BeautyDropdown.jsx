@@ -8,96 +8,13 @@ import * as React from 'react';
 import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
-import { makeStyles } from '@material-ui/core';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
-
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  catContainerBeauty: {
-    paddingTop: '1.65em',
-    color: '#282c3f',
-    fontSize: '14px',
-    letterSpacing: '0.5px',
-    fontFamily:
-      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    '&:hover ': {
-      borderBottom: '4px solid #0db7af',
-    },
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'white',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#0db7af',
-  '&:hover': {
-    color: '#0db7af',
-    background: '#fff',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#0db7af',
-  '&:hover': {
-    color: '#0db7af',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
+import {
+  useStyles, MenuBold, MenuBold2, Heading, Heading2,
+} from './styles';
 
 /**
  * @description Function to draw a line with certain specifications

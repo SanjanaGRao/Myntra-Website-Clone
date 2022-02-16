@@ -13,3 +13,8 @@ export const setCategory = (category) => ({
   type: actionTypes.SET_CATEGORY,
   payload: category,
 });
+
+export const setOneProduct = (product) => ({
+  type: actionTypes.SET_ONE_PRODUCT,
+  payload: product,
+});

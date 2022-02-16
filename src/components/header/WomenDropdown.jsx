@@ -8,96 +8,13 @@ import * as React from 'react';
 import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
-import { makeStyles } from '@material-ui/core';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
-
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  catContainerWomen: {
-    paddingTop: '1.65em',
-    color: '#282c3f',
-    fontSize: '14px',
-    letterSpacing: '0.5px',
-    fontFamily:
-      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    '&:hover ': {
-      borderBottom: '4px solid ##fb56c1',
-    },
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'white',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#fb56c1',
-  '&:hover': {
-    color: '#fb56c1',
-    background: '#fff',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#fb56c1',
-  '&:hover': {
-    color: '#fb56c1',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
+import {
+  useStyles, MenuBold, MenuBold2, HeadingWomen, HeadingWomen2,
+} from './styles';
 
 /**
  * @description Function to draw a line with certain specifications
@@ -198,9 +115,9 @@ export default function WomenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingWomen>
                 <b>Indian & Fusion Wear </b>
-              </Heading>
+              </HeadingWomen>
               <MenuBold>Kurtas & Suits</MenuBold>
               <MenuBold>Kurtis, Tunics & Tops</MenuBold>
               <MenuBold>Ethnic Wear</MenuBold>
@@ -212,12 +129,12 @@ export default function WomenDropdown() {
               <MenuBold>Dupattas & Shawls</MenuBold>
               <MenuBold>Jackets</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingWomen>
                 <b>Belts, Scarves & More </b>
-              </Heading>
-              <Heading>
+              </HeadingWomen>
+              <HeadingWomen>
                 <b>Watches & Wearables </b>
-              </Heading>
+              </HeadingWomen>
             </div>
           </Grid>
           <Grid item>
@@ -229,9 +146,9 @@ export default function WomenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading2>
+              <HeadingWomen2>
                 <b>Western Wear </b>
-              </Heading2>
+              </HeadingWomen2>
               <MenuBold2>Dresses</MenuBold2>
               <MenuBold2>Jumpsuits</MenuBold2>
               <MenuBold2>Tops</MenuBold2>
@@ -243,12 +160,12 @@ export default function WomenDropdown() {
               <MenuBold2>Jackets & Coats</MenuBold2>
               <MenuBold2>Blazers & Waistcoats</MenuBold2>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingWomen2>
                 <b>Plus Size </b>
-              </Heading2>
-              <Heading2>
+              </HeadingWomen2>
+              <HeadingWomen2>
                 <b>Sunglasses & Frames </b>
-              </Heading2>
+              </HeadingWomen2>
             </div>
           </Grid>
           <Grid item>
@@ -260,18 +177,18 @@ export default function WomenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingWomen>
                 <b>Footwear </b>
-              </Heading>
+              </HeadingWomen>
               <MenuBold>Flats</MenuBold>
               <MenuBold>Casual Shoes</MenuBold>
               <MenuBold>Heels</MenuBold>
               <MenuBold>Boots</MenuBold>
               <MenuBold>Sports Shoes & Floaters</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingWomen>
                 <b>Sports & Active Wear </b>
-              </Heading>
+              </HeadingWomen>
               <MenuBold>Clothing</MenuBold>
               <MenuBold>Footwear</MenuBold>
               <MenuBold>Sports Accessories</MenuBold>
@@ -287,9 +204,9 @@ export default function WomenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading2>
+              <HeadingWomen2>
                 <b>Lingerie & Sleepwear </b>
-              </Heading2>
+              </HeadingWomen2>
               <MenuBold2>Bra</MenuBold2>
               <MenuBold2>Briefs</MenuBold2>
               <MenuBold2>Shapewear</MenuBold2>
@@ -297,9 +214,9 @@ export default function WomenDropdown() {
               <MenuBold2>Swimwear</MenuBold2>
               <MenuBold2>Camisoles & Thermals</MenuBold2>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingWomen2>
                 <b>Beauty & Personal Care </b>
-              </Heading2>
+              </HeadingWomen2>
               <MenuBold2>Makeup</MenuBold2>
               <MenuBold2>Skincare</MenuBold2>
               <MenuBold2>Premium Beauty</MenuBold2>
@@ -316,30 +233,30 @@ export default function WomenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingWomen>
                 <b>Gadgets </b>
-              </Heading>
+              </HeadingWomen>
               <MenuBold>Smart Wearables</MenuBold>
               <MenuBold>Fitness Gadgets</MenuBold>
               <MenuBold>Headphones</MenuBold>
               <MenuBold>Speakers</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingWomen>
                 <b>Jewellery </b>
-              </Heading>
+              </HeadingWomen>
               <MenuBold>Fashion Jewellery</MenuBold>
               <MenuBold>Fine Jewellery</MenuBold>
               <MenuBold>Earrings</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingWomen>
                 <b>Bagpacks </b>
-              </Heading>
-              <Heading>
+              </HeadingWomen>
+              <HeadingWomen>
                 <b>Handbags, Bags & Wallets </b>
-              </Heading>
-              <Heading>
+              </HeadingWomen>
+              <HeadingWomen>
                 <b>Luggages & Trolleys </b>
-              </Heading>
+              </HeadingWomen>
             </div>
           </Grid>
         </Grid>

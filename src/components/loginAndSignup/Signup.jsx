@@ -8,92 +8,18 @@
 /* eslint-disable no-use-before-define */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/core';
 import { Grid } from '@mui/material';
 import { ClipLoader } from 'react-spinners';
 import { useHistory } from 'react-router-dom';
 import useForm from '../../utils/formValidation';
 import validate from '../../utils/loginValidation';
-import { signUp } from '../../service/userService';
+import { signUpUser } from '../../service/userService';
 import { loginStatus } from '../../actions/userActions';
 import Appbar from '../header/Appbar';
 import InputBox from '../commonComponents/InputBox';
 import ActionButton from '../commonComponents/ActionButton';
 import logo from '../../assets/login.webp';
-
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  backdrop: {
-    color: '#fff',
-    position: 'absolute',
-    zIndex: 100,
-  },
-  root: {
-    backgroundColor: '#FFE6F3',
-    height: '100vh',
-  },
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '5vh',
-  },
-  content: {
-    width: '400px',
-  },
-  bannerContainer: {
-    height: '160px',
-    backgroundColor: '#FFF9E7',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  banner: {
-    width: '100%',
-    height: '250px',
-  },
-  loginLabel: {
-    marginBottom: '20px',
-    fontWeight: 550,
-    fontFamily: 'WhitneySSm',
-    color: '#424553',
-    fontSize: '20px',
-  },
-  loginContainer: {
-    padding: '30px',
-    backgroundColor: '#fff',
-  },
-  primaryBtn: {
-    color: '#fff',
-    backgroundColor: '#ff3e6c',
-    borderColor: '#ff3e6c',
-    fontWeight: 600,
-    padding: '12px',
-    marginRight: '20px',
-    '&:hover': {
-      backgroundColor: '#ec5e80',
-    },
-  },
-  signup: {
-    fontFamily: 'WhitneySSm,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif',
-    fontSize: '13px',
-    lineHeight: '1.42857143',
-    color: '#424553',
-    textAlign: 'center',
-    marginTop: '4px',
-    cursor: 'pointer',
-  },
-  forgot: {
-    fontFamily: 'WhitneySSm,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif',
-    fontSize: '13px',
-    lineHeight: '1.42857143',
-    color: '#424553',
-    textAlign: 'right',
-    cursor: 'pointer',
-    paddingBottom: '1em',
-  },
-}));
+import useStyles from './signupStyles';
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -103,11 +29,13 @@ export default function Signup() {
 
   // Function to connect with strapi as well as to know if the user has logged in or not via redux
   const handleSignup = () => {
-    signUp(values.name, values.email, values.password);
-    dispatch(loginStatus());
-    setLoading(false);
-    history.push('/login');
+    signUpUser(values.name, values.email, values.password).then(() => {
+      dispatch(loginStatus(true));
+      setLoading(false);
+      history.push('/login');
+    }).catch();
   };
+
   const {
     values, errors, handleChange, handleSubmit,
   } = useForm(
@@ -117,7 +45,7 @@ export default function Signup() {
 
   // Routing function to visit loginPage when clicked
   const loginPage = () => {
-    window.location = '/login';
+    history.push('/login');
   };
 
   return (

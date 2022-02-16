@@ -110,10 +110,10 @@ export default function Appbar() {
         className={inMobile ? 'navLinksMobile' : 'navLinks'}
       >
         <li className="navItems">
-          <Link to="/men">
+          <Link to="men">
             <div className={`${classes.catContainerMen}`}>
               {(!inMobile) ? <MenDropdown /> : (
-                <Link to="/men">
+                <Link to="men">
                   <span className={`${classes.catContainerMen}`}>MEN</span>
                 </Link>
               )}
@@ -121,10 +121,10 @@ export default function Appbar() {
           </Link>
         </li>
         <li className="navItems">
-          <Link to="/women">
+          <Link to="women">
             <div className={`${classes.catContainerWomen}`}>
               {(!inMobile) ? <WomenDropdown /> : (
-                <Link to="/women">
+                <Link to="women">
                   <span className={`${classes.catContainerWomen}`}>WOMEN</span>
                 </Link>
               )}
@@ -132,10 +132,10 @@ export default function Appbar() {
           </Link>
         </li>
         <li className="navItems">
-          <Link to="/kids">
+          <Link to="kids">
             <div className={`${classes.catContainerKids}`}>
               {(!inMobile) ? <KidsDropdown /> : (
-                <Link to="/kids">
+                <Link to="kids">
                   <span className={`${classes.catContainerKids}`}>KIDS</span>
                 </Link>
               )}
@@ -143,10 +143,10 @@ export default function Appbar() {
           </Link>
         </li>
         <li className="navItems">
-          <Link to="/home">
+          <Link to="home">
             <div className={`${classes.catContainerHome}`}>
               {(!inMobile) ? <HomeDropdown /> : (
-                <Link to="/home">
+                <Link to="home">
                   <span className={`${classes.catContainerHome}`}>HOME & LIVING</span>
                 </Link>
               )}
@@ -154,10 +154,10 @@ export default function Appbar() {
           </Link>
         </li>
         <li className="navItems">
-          <Link to="/beauty">
+          <Link to="beauty">
             <div className={`${classes.catContainerBeauty}`}>
               {(!inMobile) ? <BeautyDropdown /> : (
-                <Link to="/beauty">
+                <Link to="beauty">
                   <span className={`${classes.catContainerBeauty}`}>BEAUTY</span>
                 </Link>
               )}
@@ -165,10 +165,10 @@ export default function Appbar() {
           </Link>
         </li>
         <li className="navItems">
-          <Link to="/studio">
+          <Link to="studio">
             <div className={`${classes.catContainerStudio}`}>
               {(!inMobile) ? <StudioDropdown /> : (
-                <Link to="/studio">
+                <Link to="studio">
                   <span className={`${classes.catContainerStudio}`}>STUDIO</span>
                 </Link>
               )}
@@ -193,10 +193,10 @@ export default function Appbar() {
         <Link to="wishlist">
           <div className="headerUser">
             <FavoriteBorderIcon className="headerIdentity" />
-            <span>Whislist</span>
+            <span>Wishlist</span>
           </div>
         </Link>
-        <Link to="cart">
+        <Link to="/bag">
           <div className="headerUser">
             <ShoppingBagOutlinedIcon className="headerIdentity" />
             <span>Bag</span>

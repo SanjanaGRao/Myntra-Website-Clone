@@ -8,96 +8,13 @@ import * as React from 'react';
 import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
-import { makeStyles } from '@material-ui/core';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
-
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  catContainerMen: {
-    paddingTop: '1.65em',
-    color: '#282c3f',
-    fontSize: '14px',
-    letterSpacing: '0.5px',
-    fontFamily:
-      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    '&:hover ': {
-      borderBottom: '4px solid #ee5f73',
-    },
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'white',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#ee5f73',
-  '&:hover': {
-    color: '#ee5f73',
-    background: '#fff',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#ee5f73',
-  '&:hover': {
-    color: '#ee5f73',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
+import {
+  useStyles, MenuBold, MenuBold2, HeadingMen, HeadingMen2,
+} from './styles';
 
 /**
  * @description Function to draw a line with certain specifications
@@ -198,9 +115,9 @@ export default function MenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingMen>
                 <b>Topwear </b>
-              </Heading>
+              </HeadingMen>
               <MenuBold>T-Shirts</MenuBold>
               <MenuBold>Casual Shirts</MenuBold>
               <MenuBold>Formal Shirts</MenuBold>
@@ -211,9 +128,9 @@ export default function MenDropdown() {
               <MenuBold>Suits</MenuBold>
               <MenuBold>Rain Jackets</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingMen>
                 <b>Indian & Festive Wear </b>
-              </Heading>
+              </HeadingMen>
               <MenuBold>Kurtas & Kurta Sets</MenuBold>
               <MenuBold>Sherwanis</MenuBold>
               <MenuBold>Nehru Jackets</MenuBold>
@@ -229,27 +146,27 @@ export default function MenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading2>
+              <HeadingMen2>
                 <b>Bottomwear </b>
-              </Heading2>
+              </HeadingMen2>
               <MenuBold2>Jeans</MenuBold2>
               <MenuBold2>Casual Trousers</MenuBold2>
               <MenuBold2>Formal Trousers</MenuBold2>
               <MenuBold2>Shorts</MenuBold2>
               <MenuBold2>Track Pants & Joggers</MenuBold2>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingMen2>
                 <b>Innerwear & Sleepwear </b>
-              </Heading2>
+              </HeadingMen2>
               <MenuBold2>Briefs & Trunks</MenuBold2>
               <MenuBold2>Boxers</MenuBold2>
               <MenuBold2>Vests</MenuBold2>
               <MenuBold2>Sleepwear & Loungewear</MenuBold2>
               <MenuBold2>Thermals</MenuBold2>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingMen2>
                 <b>Plus Size </b>
-              </Heading2>
+              </HeadingMen2>
             </div>
           </Grid>
           <Grid item>
@@ -261,9 +178,9 @@ export default function MenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingMen>
                 <b>Footwear </b>
-              </Heading>
+              </HeadingMen>
               <MenuBold>Casual Shoes</MenuBold>
               <MenuBold>Sports Shoes</MenuBold>
               <MenuBold>Formal Shoes</MenuBold>
@@ -272,15 +189,15 @@ export default function MenDropdown() {
               <MenuBold>Flip Flops</MenuBold>
               <MenuBold>Socks</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingMen>
                 <b>Personal Care & Grooming </b>
-              </Heading>
-              <Heading>
+              </HeadingMen>
+              <HeadingMen>
                 <b>Sunglasses & Frames </b>
-              </Heading>
-              <Heading>
+              </HeadingMen>
+              <HeadingMen>
                 <b>Watches </b>
-              </Heading>
+              </HeadingMen>
             </div>
           </Grid>
           <Grid item>
@@ -292,9 +209,9 @@ export default function MenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading2>
+              <HeadingMen2>
                 <b>Sports & Active Wear </b>
-              </Heading2>
+              </HeadingMen2>
               <MenuBold2>Sports Shoes</MenuBold2>
               <MenuBold2>Sports Sandals</MenuBold2>
               <MenuBold2>Active T-Shirts</MenuBold2>
@@ -304,9 +221,9 @@ export default function MenDropdown() {
               <MenuBold2>Sports Accessories</MenuBold2>
               <MenuBold2>Swimwear</MenuBold2>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingMen2>
                 <b>Gadgets </b>
-              </Heading2>
+              </HeadingMen2>
               <MenuBold2>Smart Wearables</MenuBold2>
               <MenuBold2>Fitness Gadgets</MenuBold2>
               <MenuBold2>Headphones</MenuBold2>
@@ -322,9 +239,9 @@ export default function MenDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingMen>
                 <b>Fashion Accessories </b>
-              </Heading>
+              </HeadingMen>
               <MenuBold>Wallets</MenuBold>
               <MenuBold>Belts</MenuBold>
               <MenuBold>Perfumes & Body Mists</MenuBold>
@@ -338,12 +255,12 @@ export default function MenDropdown() {
               <MenuBold>Rings & Wristwear</MenuBold>
               <MenuBold>Helmets</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingMen>
                 <b>Bags & Bagpacks </b>
-              </Heading>
-              <Heading>
+              </HeadingMen>
+              <HeadingMen>
                 <b>Luggages & Trolleys </b>
-              </Heading>
+              </HeadingMen>
             </div>
           </Grid>
         </Grid>

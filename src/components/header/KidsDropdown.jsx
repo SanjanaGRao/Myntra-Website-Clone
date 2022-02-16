@@ -8,96 +8,13 @@ import * as React from 'react';
 import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
-import { makeStyles } from '@material-ui/core';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
-
-/**
- * @description Makes use of makeStyles from MUI to generate custom styling to components
- */
-const useStyles = makeStyles(() => ({
-  catContainerKids: {
-    paddingTop: '1.65em',
-    color: '#282c3f',
-    fontSize: '14px',
-    letterSpacing: '0.5px',
-    fontFamily:
-      'Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    '&:hover ': {
-      borderBottom: '4px solid #f26a10',
-    },
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'white',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to Menu items
- */
-const MenuBold2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  paddingRight: '6px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#3e4152',
-  '&:hover': {
-    color: '#3e4152',
-    fontWeight: '700',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#f26a10',
-  '&:hover': {
-    color: '#f26a10',
-    background: '#fff',
-  },
-}));
-
-/**
- * @description Makes use of styled from MUI to generate custom styling to heading in Menu items
- */
-const Heading2 = styled(MenuItem)(() => ({
-  fontSize: '14px',
-  fontFamily:
-    ' Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
-  color: '#f26a10',
-  '&:hover': {
-    color: '#f26a10',
-    background: 'rgba(245,245,246,.4)',
-  },
-}));
+import {
+  useStyles, MenuBold, MenuBold2, HeadingKids, HeadingKids2,
+} from './styles';
 
 /**
  * @description Function to draw a line with certain specifications
@@ -198,9 +115,9 @@ export default function KidsDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingKids>
                 <b>Boys Clothing </b>
-              </Heading>
+              </HeadingKids>
               <MenuBold>T-Shirts</MenuBold>
               <MenuBold>Shirts</MenuBold>
               <MenuBold>Shorts</MenuBold>
@@ -225,9 +142,9 @@ export default function KidsDropdown() {
                 width: '220px',
               }}
             >
-              <Heading2>
+              <HeadingKids2>
                 <b>Girls Clothing </b>
-              </Heading2>
+              </HeadingKids2>
               <MenuBold2>Dresses</MenuBold2>
               <MenuBold2>Tops</MenuBold2>
               <MenuBold2>Tshirts</MenuBold2>
@@ -254,9 +171,9 @@ export default function KidsDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingKids>
                 <b>Footwear </b>
-              </Heading>
+              </HeadingKids>
               <MenuBold>Casual Shoes</MenuBold>
               <MenuBold>Flipflops</MenuBold>
               <MenuBold>Sports Shoes</MenuBold>
@@ -266,9 +183,9 @@ export default function KidsDropdown() {
               <MenuBold>School Shoes</MenuBold>
               <MenuBold>Socks</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingKids>
                 <b>Toys </b>
-              </Heading>
+              </HeadingKids>
               <MenuBold>Learning & Development</MenuBold>
               <MenuBold>Activity Toys</MenuBold>
               <MenuBold>Soft Toys</MenuBold>
@@ -284,9 +201,9 @@ export default function KidsDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingKids>
                 <b>Infants </b>
-              </Heading>
+              </HeadingKids>
               <MenuBold>Bodysuits</MenuBold>
               <MenuBold>Rompers & Sleepsuits</MenuBold>
               <MenuBold>Clothing Sets</MenuBold>
@@ -297,12 +214,12 @@ export default function KidsDropdown() {
               <MenuBold>Innerwear & Sleepwear</MenuBold>
               <MenuBold>Infant Care</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading2>
+              <HeadingKids2>
                 <b>Home & Bath </b>
-              </Heading2>
-              <Heading2>
+              </HeadingKids2>
+              <HeadingKids2>
                 <b>Personal Care </b>
-              </Heading2>
+              </HeadingKids2>
             </div>
           </Grid>
           <Grid item>
@@ -314,9 +231,9 @@ export default function KidsDropdown() {
                 width: '220px',
               }}
             >
-              <Heading>
+              <HeadingKids>
                 <b>Kids Accessories </b>
-              </Heading>
+              </HeadingKids>
               <MenuBold>Bags & Backpacks</MenuBold>
               <MenuBold>Watches</MenuBold>
               <MenuBold>Jewellery & Hair accessory</MenuBold>
@@ -324,9 +241,9 @@ export default function KidsDropdown() {
               <MenuBold>Masks & Protective Gears</MenuBold>
               <MenuBold>Caps & Hats</MenuBold>
               <ColoredLine color="rgba(245,245,246,.4)" />
-              <Heading>
+              <HeadingKids>
                 <b>Brands </b>
-              </Heading>
+              </HeadingKids>
               <MenuBold>H&M</MenuBold>
               <MenuBold>Max Kids</MenuBold>
               <MenuBold>Pantaloons</MenuBold>

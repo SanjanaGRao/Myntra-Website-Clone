@@ -11,12 +11,22 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import useStyles from './productStyles';
+import { setOneProduct } from '../../actions/itemsAction';
 
 export default function ProductCard({ item }) {
   const classes = useStyles();
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleProduct = (oneProduct) => {
+    dispatch(setOneProduct(oneProduct));
+    history.push(`/products/${oneProduct.attributes.ProductID}`);
+  };
   return (
-    <Card className={classes.card} sx={{ boxShadow: 'none' }}>
+    <Card className={classes.card} sx={{ boxShadow: 'none' }} onClick={() => { handleProduct(item); }}>
       <CardMedia
         className={classes.cardImage}
         component="img"
@@ -43,10 +53,10 @@ export default function ProductCard({ item }) {
         </Typography>
         <Typography component="div">
           <span className={classes.price}>
-            <b>{`${item.attributes.discountPrice}`}</b>
+            <b>{`Rs. ${item.attributes.discountPrice}`}</b>
           </span>
           <span className={classes.original}>
-            {`${item.attributes.costPrice}`}
+            {`Rs. ${item.attributes.costPrice}`}
           </span>
           <span className={classes.discount}>
             (
