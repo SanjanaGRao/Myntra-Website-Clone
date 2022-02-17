@@ -1,3 +1,10 @@
+/**
+ * @description Bag Item
+ * Displays the items in the bag along with its details.
+ * @returns Bag Item(S)
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {
@@ -12,6 +19,8 @@ import useStyle from './bagItemStyles';
 export default function BagItem({ item }) {
   const dispatch = useDispatch();
   const classes = useStyle();
+
+  // Function when Remove button is clicked. It removes the item from the cart.
   const removeItemFromCart = (id) => {
     deleteCart(id)
       .then((res) => { dispatch(deleteCartItem(res.id)); })
@@ -36,13 +45,13 @@ export default function BagItem({ item }) {
             {' '}
             {item.attributes.discountPrice}
           </span>
-&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;
           <span className={classes.greyTextColor} style={{ textDecoration: 'line-through' }}>
             Rs.
             {' '}
             {item.attributes.costPrice}
           </span>
-&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;
           <span style={{ color: '#f16565' }}>
             {item.attributes.discount}
             {' '}

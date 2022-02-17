@@ -26,7 +26,7 @@ export default function DealsOfTheDay() {
   const isBrands = useSelector((state) => state.login.brands);
 
   return (
-    <>
+    <div>
       <h4 className="dealsofdayHeading">Deals of the Day</h4>
       <div className="dealsofday">
         { Object.keys(isBrands).length !== 0 ? isBrands.map((item) => (
@@ -36,6 +36,6 @@ export default function DealsOfTheDay() {
           />
         )) : null }
       </div>
-    </>
+    </div>
   );
 }

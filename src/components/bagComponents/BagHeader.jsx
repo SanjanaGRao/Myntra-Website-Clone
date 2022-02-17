@@ -1,3 +1,10 @@
+/**
+ * @description BagHeader
+ * Displays the header in the bag(Cart) page
+ * @returns Bag Header
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */

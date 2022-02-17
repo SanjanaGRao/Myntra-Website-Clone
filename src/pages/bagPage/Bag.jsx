@@ -1,3 +1,11 @@
+/**
+ * @description Bag
+ * Once the user presses Add to bag and clicks on Bag button, this page is displayed.
+ * This page also calls various subcomponents like BagHeader, BagItem, TotalPrice and EmptyBag
+ * @returns Bag page
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import React from 'react';
 import {
   Box, Typography, Button, Grid,
@@ -36,9 +44,9 @@ export default function Bag() {
                 items )
               </Typography>
             </Box>
-            {cartItems.map((item) => (
+            {Object.keys(cartItems).length !== 0 ? (cartItems.map((item) => (
               <BagItem item={item} />
-            ))}
+            ))) : null }
           </Grid>
           <Grid item lg={4} md={4} sm={12} xs={12}>
             <TotalPrice cartItems={cartItems} />

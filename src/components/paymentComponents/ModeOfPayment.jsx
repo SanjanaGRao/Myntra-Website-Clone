@@ -1,5 +1,13 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-props-no-spreading */
+/**
+ * Mode of Payment component
+ * Displays the various mode of payments the user has.
+ * For now, only COD is enabled wheareas others are disabled.
+ * @returns Mode of Payment component
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -12,9 +20,10 @@ import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
 import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import PhoneAndroidOutlinedIcon from '@mui/icons-material/PhoneAndroidOutlined';
-import CaptchaTest from './capchaTest';
+import CaptchaTest from './capcha';
 import useStyle from './modeOfPaymentStyles';
 
+// MUI Function for a tab panel. Source - MUI documentaion
 function TabPanel(props) {
   const {
     children, value, index, ...other
@@ -43,6 +52,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
+// MUI function to open tab panel. Source - MUI documentaion
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,

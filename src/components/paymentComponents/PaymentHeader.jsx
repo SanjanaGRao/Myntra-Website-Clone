@@ -1,4 +1,11 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/**
+ * @description Payment Header
+ * Displays the header in the Payment page
+ * @returns Payment page Header
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';

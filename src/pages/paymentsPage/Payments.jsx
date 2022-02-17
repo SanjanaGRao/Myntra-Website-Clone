@@ -1,3 +1,10 @@
+/**
+ * @description This is a payments page for buying the product
+ * Currently only COD is enabled for simplicity
+ * @returns a page payment details and captcha.
+ * @author Sanjana Rao
+ * @since 16-02-2022
+ */
 import React from 'react';
 import {
   Box, Typography, Grid,

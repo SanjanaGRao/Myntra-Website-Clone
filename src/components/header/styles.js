@@ -1,3 +1,9 @@
+/**
+ * @description This page contains custom styling for MUI Components
+ * The styling of MUI Components
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import { styled } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core';
 import MenuItem from '@mui/material/MenuItem';

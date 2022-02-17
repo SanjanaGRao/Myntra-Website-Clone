@@ -1,8 +1,16 @@
+/**
+ * @description AddressHeader
+ * Displays the header in the address page
+ * @returns Address Header
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-unused-vars */
+
 import React, { useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import logo from '../../assets/myntra_logo.png';
@@ -11,19 +19,7 @@ import useStyles from './addressHeaderStyle';
 export default function AddressHeader() {
   const classes = useStyles();
   const history = useHistory();
-  const path = useLocation();
   const [activeLink, setActiveLink] = useState('address');
-
-  const loadDetails = () => {
-    if (path.pathname === '/bag') {
-      setActiveLink('bag');
-    } else if (path.pathname === '/address') {
-      setActiveLink('address');
-    } else if (path.pathname === '/payment') {
-      setActiveLink('payment');
-    }
-  };
-
   return (
     <div className={classes.root}>
       <Grid container className={classes.header}>

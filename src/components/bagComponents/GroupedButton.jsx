@@ -1,3 +1,11 @@
+/**
+ * @description Grouped Button
+ * Button components grouped together to make an entire button component
+ * with + and - options to increase and decrease the quantity.
+ * @returns Buttons grouped together
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { ButtonGroup, Button, makeStyles } from '@material-ui/core';
@@ -17,6 +25,8 @@ const useStyle = makeStyles({
 export default function GroupedButton({ item }) {
   const classes = useStyle();
   const dispatch = useDispatch();
+
+  // Function to increase the cart quantity
   const handleQuantity = (Qty) => {
     updateCart({
       data: {

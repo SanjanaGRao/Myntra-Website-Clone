@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /**
 * Connect to API and perform either cart operations
 * and store the returned token.

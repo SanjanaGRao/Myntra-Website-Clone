@@ -1,5 +1,14 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
+/**
+ * @description This page contains details of customer address
+ * Once the customer enters the details, they have an option of editing the details too
+ * The edited details gets updated in strapi
+ * @returns Customer's address UI and details
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
+
 import React, { useState, useEffect } from 'react';
 import {
   Button,
@@ -47,7 +56,7 @@ export default function CustomerAddress() {
   const classes = useStyle();
   const addressList = useSelector((state) => state.allAddress.address);
   const address = addressList.length > 0 ? addressList[0].attributes : {};
-  console.log(addressList);
+  console.log(address);
   const initialUserState = {
     name: address.Name,
     phone: address.PhoneNumber,

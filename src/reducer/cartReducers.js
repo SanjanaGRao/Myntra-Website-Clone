@@ -1,10 +1,14 @@
 /* eslint-disable no-case-declarations */
+/* eslint-disable default-param-last */
+/**
+ * Reducer for storing the cart items
+ * @author Sanjana Rao
+ */
 import ActionTypes from '../constants/actionTypes';
 
 const intialState = {
   cart: [],
 };
-// eslint-disable-next-line default-param-last
 const cartReducer = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_CART:

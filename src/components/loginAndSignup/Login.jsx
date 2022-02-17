@@ -47,7 +47,7 @@ export default function Login() {
     history.push('/signup');
   };
 
-  localStorage.setItem('name', values.email);
+  localStorage.setItem('email', values.email);
   return (
     <div className={classes.root}>
       <div><Appbar /></div>

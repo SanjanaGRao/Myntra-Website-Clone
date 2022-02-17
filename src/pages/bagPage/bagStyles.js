@@ -1,3 +1,9 @@
+/**
+ * @description This page contains custom styling for MUI Components
+ * The styling of MUI Components
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import { makeStyles } from '@material-ui/core';
 
 const useStyle = makeStyles((theme) => ({
@@ -8,7 +14,6 @@ const useStyle = makeStyles((theme) => ({
     padding: '8px',
     maxWidth: '1200px',
     display: 'flex',
-    flexFlow: 'row',
   },
   leftComponent: {
     paddingRight: 15,
@@ -23,7 +28,7 @@ const useStyle = makeStyles((theme) => ({
   },
   placeOrder: {
     display: 'flex',
-    marginLeft: '6em',
+    marginLeft: '4.5em',
     background: '#ff3f6c',
     color: '#fff',
     borderRadius: 2,

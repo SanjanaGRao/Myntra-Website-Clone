@@ -1,3 +1,10 @@
+/**
+ * @description Order Success Header
+ * Displays the header in the last, order successfull page
+ * @returns Order Success page Header
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-unused-vars */

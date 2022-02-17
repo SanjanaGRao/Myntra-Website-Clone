@@ -1,3 +1,10 @@
+/**
+ * @description This page contains product details of an item
+ * The details of the product are coming from backend and is styles using MUI.
+ * @returns a page containing all product details
+ * @author Sanjana Rao
+ * @since 11-02-2022
+ */
 import React from 'react';
 import './products.css';
 import { useSelector, useDispatch } from 'react-redux';
@@ -35,6 +42,7 @@ export default function OneProduct() {
 
   const { vertical, horizontal, open } = state;
 
+  // Function is used to add an item to the cart. The item details are sent to strapi
   const handleClick = (newState, item) => {
     setState({ open: true, ...newState });
     const data = {
@@ -54,6 +62,7 @@ export default function OneProduct() {
       .catch();
   };
 
+  // Function to close the snackbar
   const handleClose = () => {
     setState({ ...state, open: false });
   };
@@ -120,11 +129,17 @@ export default function OneProduct() {
                   <button type="submit" className={classes.sizes}>Onesize</button>
                 </Typography>
                 <div className={classes.CartButtons}>
-                  <Button onClick={() => handleClick({ vertical: 'top', horizontal: 'right' }, product.attributes)} className={classes.button} style={{ marginRight: 10, background: '#ff3e6c', fontSize: '16px' }} variant="contained">
+                  <Button onClick={() => handleClick({ vertical: 'top', horizontal: 'right' }, product.attributes)} className={classes.button} style={{ marginRight: 10, background: '#ff3e6c', fontSize: '14px' }} variant="contained">
                     <ShoppingBagIcon sx={{ color: 'white' }} />
                     <b>Add to Bag</b>
                   </Button>
-                  <Button className={classes.wishlist} style={{ background: '#fff', color: 'black', fontSize: '16px' }} variant="contained">
+                  <Button
+                    className={classes.wishlist}
+                    style={{
+                      background: '#fff', color: 'black', fontSize: '14px',
+                    }}
+                    variant="contained"
+                  >
                     <FavoriteBorderIcon />
                     {' '}
                     <b>Wishlist</b>
@@ -142,7 +157,7 @@ export default function OneProduct() {
                     placeholder="Enter a PIN Code"
                     helperText="Please enter PIN code to check delivery time & Pay on Availability"
                     size="small"
-                    sx={{ width: '40ch' }}
+                    sx={{ width: '30ch' }}
                   />
                   <span className={classes.selectCheck}><b>CHECK</b></span>
                   <div className={classes.deliveryText}>
@@ -193,7 +208,7 @@ export default function OneProduct() {
         <Snackbar
           anchorOrigin={{ vertical, horizontal }}
           open={open}
-          autoHideDuration={5000}
+          autoHideDuration={3000}
           onClose={handleClose}
           message="Your product has been Added to Bag!"
           key={vertical + horizontal}

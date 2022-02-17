@@ -1,16 +1,24 @@
+/**
+ * @description This page contains custom styling for MUI Components
+ * The styling of MUI Components
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   card: {
-    maxWidth: 675,
     height: '100%',
-    padding: '3em',
   },
   root: {
-    paddingTop: '4.5em',
-    paddingLeft: '21em',
-    paddingBottom: '7.5em',
+    padding: 'auto',
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
+    position: 'relative',
     background: '#eaeaec',
+    paddingTop: '3.5em',
+    paddingBottom: '3.5em',
   },
   heading: {
     fontSize: '63px',

@@ -1,3 +1,10 @@
+/**
+ * @description Empty Bag
+ * Displays when there is nothing added to the bag
+ * @returns UI for empty bag case
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
 import useStyle from './emptyBagStyles';

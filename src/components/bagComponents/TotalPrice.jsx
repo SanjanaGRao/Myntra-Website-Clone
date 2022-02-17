@@ -1,3 +1,10 @@
+/**
+ * @description Total Price
+ * Displays the order summary i.e., the MRP, discount and total price of the items in the bag
+ * @returns Total price of items in a bag
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable radix */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
@@ -9,6 +16,7 @@ export default function TotalPrice({ cartItems }) {
   const [price, setPrice] = useState(0);
   const [discount, setDiscount] = useState(0);
 
+  // Function to calculate total amount of the items in the bag
   const totalAmount = () => {
     let prices = 0;
     let discounts = 0;

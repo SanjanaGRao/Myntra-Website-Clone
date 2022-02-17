@@ -26,7 +26,7 @@ export default function Profile() {
   const [dropDownOpen, setDropDownOpen] = React.useState(null);
   const open = Boolean(dropDownOpen);
   const login = useSelector((state) => state.login.isLogin);
-  const userEmail = localStorage.getItem('name');
+  const userEmail = localStorage.getItem('email');
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -42,7 +42,7 @@ export default function Profile() {
 
   // Function to go to login page when clicked
   const loginPage = () => {
-    window.location = '/login';
+    history.push('/login');
   };
 
   const handleLogout = () => {

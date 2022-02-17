@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
   },
   root: {
     backgroundColor: '#FFE6F3',
-    height: '100vh',
+    height: '110vh',
   },
   container: {
     display: 'flex',

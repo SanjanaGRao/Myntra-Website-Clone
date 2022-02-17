@@ -1,3 +1,9 @@
+/**
+ * @description This page contains custom styling for MUI Components
+ * The styling of MUI Components
+ * @author Sanjana Rao
+ * @since 11-02-2022
+ */
 import { makeStyles } from '@material-ui/core';
 
 const useStyle = makeStyles(() => ({
@@ -11,7 +17,6 @@ const useStyle = makeStyles(() => ({
     padding: '16px',
   },
   image: {
-    marginLeft: '1em',
     transition: 'opacity .5s linear',
     opacity: 1,
     borderRadius: '2px',
@@ -24,12 +29,11 @@ const useStyle = makeStyles(() => ({
   },
   CartButtons: {
     marginTop: '35px',
-    width: '61%',
     display: 'flex',
     justifyContent: 'space-between',
   },
   button: {
-    width: '50%',
+    width: '60%',
     height: 50,
   },
   productDetails: {
@@ -182,7 +186,7 @@ const useStyle = makeStyles(() => ({
     letterSpacing: '.4px',
     color: '#282c3f',
     fontSize: '16px',
-    width: '50%',
+    width: '60%',
     height: 50,
   },
   deliveryOp: {

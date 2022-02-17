@@ -23,5 +23,8 @@ export default function Card({ img, pageLink }) {
 }
 Card.propTypes = {
   img: PropTypes.string.isRequired,
-  pageLink: PropTypes.string.isRequired,
+  pageLink: PropTypes.string,
+};
+Card.defaultProps = {
+  pageLink: '/',
 };

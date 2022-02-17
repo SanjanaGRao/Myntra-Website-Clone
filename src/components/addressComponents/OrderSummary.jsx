@@ -1,3 +1,10 @@
+/**
+ * @description Order Summary
+ * Displays the order summary i.e., the MRP, discount and total price of the items in the bag
+ * @returns Order Summary
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable react/prop-types */
 /* eslint-disable radix */
 import React, { useState, useEffect } from 'react';
@@ -9,6 +16,7 @@ export default function OrderSummary({ cartItems }) {
   const [price, setPrice] = useState(0);
   const [discount, setDiscount] = useState(0);
 
+  // Function to calculate the total amount
   const totalAmount = () => {
     let prices = 0;
     let discounts = 0;

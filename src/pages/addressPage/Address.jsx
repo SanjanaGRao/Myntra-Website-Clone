@@ -1,3 +1,12 @@
+/**
+ * @description Delivery Address page
+ * Once the order is placed in the bag, it gets redirected to address page where the
+ * user needs to save his/her address.
+ * It has various subcomponents like AddressHeader, DeliveryEstimates, OrderSummary etc.
+ * @returns the entire address page
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import React from 'react';
 import {
   Box, Typography, Button, Grid,

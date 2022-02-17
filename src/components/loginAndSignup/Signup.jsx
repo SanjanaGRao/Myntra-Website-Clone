@@ -32,7 +32,7 @@ export default function Signup() {
     signUpUser(values.name, values.email, values.password).then(() => {
       dispatch(loginStatus(true));
       setLoading(false);
-      history.push('/login');
+      history.push('/');
     }).catch();
   };
 
@@ -48,6 +48,7 @@ export default function Signup() {
     history.push('/login');
   };
 
+  localStorage.setItem('email', values.email);
   return (
     <div className={classes.root}>
       <div><Appbar /></div>

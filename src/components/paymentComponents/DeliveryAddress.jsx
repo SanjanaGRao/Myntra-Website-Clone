@@ -1,3 +1,11 @@
+/**
+ * @description Delivery Address
+ * Displays the delivery address which had been previously given as
+ * an input by the customer in previous page.
+ * @returns Delivery address along with its UI
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {

@@ -29,8 +29,8 @@ export default function BiggestDeal() {
   const isTopBrands = useSelector((state) => state.login.topBrands);
 
   return (
-    <>
-      <h4 className="biggestdealHeading">Biggest Deal on Top Brands</h4>
+    <div>
+      <h4 id="root" className="biggestdealHeading">Biggest Deal on Top Brands</h4>
       <div className="biggestdeal">
         { Object.keys(isTopBrands).length !== 0 ? isTopBrands.map((item) => (
           <Card
@@ -46,6 +46,6 @@ export default function BiggestDeal() {
         <Card img={bigd9} />
         <Card img={bigd10} />
       </div>
-    </>
+    </div>
   );
 }

@@ -1,3 +1,10 @@
+/**
+ * @description Delivery Estimates section
+ * Displays the text in that section in the address page
+ * @returns The text stating delivery time estimates
+ * @author Sanjana Rao
+ * @since 15-02-2022
+ */
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import useStyle from './deliveryEstimatesStyles';
