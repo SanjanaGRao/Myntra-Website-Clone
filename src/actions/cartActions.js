@@ -27,3 +27,7 @@ export const deleteCartItem = (cartId) => ({
   type: ActionTypes.DELETE_CART,
   payload: cartId,
 });
+
+export const emptyCart = () => ({
+  type: ActionTypes.SET_EMPTY_CART,
+});

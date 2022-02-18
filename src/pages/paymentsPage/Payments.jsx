@@ -23,7 +23,7 @@ export default function Payments() {
   const addresses = useSelector((state) => state.allAddress.address);
 
   return (
-    <Box className={classes.cartContainer}>
+    <Box id="box" className={classes.cartContainer}>
       <PaymentHeader />
       <Grid container className={classes.component}>
         <Grid item lg={9} md={9} sm={12} xs={12} className={classes.leftComponent}>

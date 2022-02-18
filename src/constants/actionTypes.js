@@ -19,5 +19,6 @@ const actionTypes = {
   UPDATE_CART: 'UPDATE_CART',
   DELETE_CART: 'DELETE_CART',
   SET_ADDRESS: 'SET_ADDRESS',
+  SET_EMPTY_CART: 'SET_EMPTY_CART',
 };
 export default actionTypes;

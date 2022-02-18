@@ -10,7 +10,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Grid, makeStyles } from '@material-ui/core';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import logo from '../../assets/myntra_logo.png';
@@ -19,18 +19,7 @@ import useStyles from './orderSuccessHeaderStyles';
 export default function OrderSuccessHeader() {
   const classes = useStyles();
   const history = useHistory();
-  const path = useLocation();
   const [activeLink, setActiveLink] = useState('');
-
-  const loadDetails = () => {
-    if (path.pathname === '/bag') {
-      setActiveLink('bag');
-    } else if (path.pathname === '/address') {
-      setActiveLink('address');
-    } else if (path.pathname === '/payment') {
-      setActiveLink('payment');
-    }
-  };
 
   return (
     <div className={classes.root}>

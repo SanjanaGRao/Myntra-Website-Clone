@@ -15,6 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import SearchIcon from '@mui/icons-material/Search';
 import { makeStyles } from '@material-ui/core';
 import { IconButton } from '@mui/material';
+import { useSelector } from 'react-redux';
 import Logo from '../../assets/myntra_logo.png';
 import MenDropdown from './MenDropdown';
 import WomenDropdown from './WomenDropdown';
@@ -86,6 +87,7 @@ export default function Appbar() {
   const [inMobile, setInMobile] = useState(false);
   const classes = useStyles();
   const history = useHistory();
+  const cartItems = useSelector((state) => state.allCarts.cart);
 
   // Routing Function to go to dashboard
   const landingPage = () => {
@@ -198,7 +200,15 @@ export default function Appbar() {
         </Link>
         <Link to="/bag">
           <div className="headerUser">
-            <ShoppingBagOutlinedIcon className="headerIdentity" />
+            <div>
+              <ShoppingBagOutlinedIcon className="headerIdentity" />
+              {cartItems
+                && Object.keys(cartItems).length !== 0 ? (
+                  <span className="cartCount" style={{ color: '#fff', fontSize: '9px' }}>{cartItems.length}</span>
+                ) : (
+                  ''
+                )}
+            </div>
             <span>Bag</span>
           </div>
         </Link>

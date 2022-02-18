@@ -9,7 +9,6 @@ import './appbar.css';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
 import {
@@ -47,26 +46,24 @@ export default function HomeDropdown() {
   };
 
   return (
-    <>
+    <div>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Tooltip>
-          <IconButton
-            onClick={handleClick}
-            className="navItems"
-            onMouseOver={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : 'false'}
-          >
-            <div className={`${classes.catContainerHome}`}>
-              <span>
-                <b>HOME&LIVING</b>
-              </span>
-            </div>
-          </IconButton>
-        </Tooltip>
+        <IconButton
+          onClick={handleClick}
+          className="navItems"
+          onMouseOver={handleClick}
+          size="small"
+          sx={{ ml: 2 }}
+          aria-controls={open ? 'account-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : 'false'}
+        >
+          <div className={`${classes.catContainerHome}`}>
+            <span>
+              <b>HOME&LIVING</b>
+            </span>
+          </div>
+        </IconButton>
       </Box>
       <Menu
         anchorEl={dropDownOpen}
@@ -260,7 +257,7 @@ export default function HomeDropdown() {
           </Grid>
         </Grid>
       </Menu>
-    </>
+    </div>
   );
 }
 

@@ -15,16 +15,28 @@ import {
   validateCaptcha,
 } from 'react-simple-captcha';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { emptyCart } from '../../actions/cartActions';
+import { deleteCart } from '../../service/cartService';
 
 export default function CaptchaTest() {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.allCarts.cart);
   const history = useHistory();
+
   useEffect(() => {
     loadCaptchaEnginge(8);
   }, []);
 
+  const EmptyCart = () => {
+    cartItems.map((item) => deleteCart(item.id));
+    dispatch(emptyCart());
+  };
+
   const doSubmit = () => {
     const userCaptcha = document.getElementById('userCaptchaInput').value;
     if (validateCaptcha(userCaptcha) === true) {
+      EmptyCart();
       history.push('/orderComplete');
       loadCaptchaEnginge(6);
       document.getElementById('userCaptchaInput').value = '';

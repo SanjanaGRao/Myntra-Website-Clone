@@ -26,7 +26,7 @@ export default function Products() {
   }, []);
   const products = useSelector((state) => state.allItems.products);
   return (
-    <>
+    <div>
       <Appbar />
       <div className="box">
         { products.length !== 0 ? (
@@ -99,6 +99,6 @@ export default function Products() {
         ))) : null}
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

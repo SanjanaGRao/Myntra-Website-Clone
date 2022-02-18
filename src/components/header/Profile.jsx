@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import Tooltip from '@mui/material/Tooltip';
 import { useHistory } from 'react-router-dom';
 import { loginStatus } from '../../actions/userActions';
 import Neww from '../../assets/new_icon.png';
@@ -54,19 +53,17 @@ export default function Profile() {
   return (
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Tooltip>
-          <IconButton
-            onClick={handleClick}
-            onMouseOver={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : 'false'}
-          >
-            <PermIdentityIcon className="headerIdentity" />
-          </IconButton>
-        </Tooltip>
+        <IconButton
+          onClick={handleClick}
+          onMouseOver={handleClick}
+          size="small"
+          sx={{ ml: 2 }}
+          aria-controls={open ? 'account-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : 'false'}
+        >
+          <PermIdentityIcon className="headerIdentity" />
+        </IconButton>
       </Box>
       <Menu
         anchorEl={dropDownOpen}
