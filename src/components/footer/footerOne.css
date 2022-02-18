@@ -1,0 +1,194 @@
+.footer {
+  background-color: #fafbfc;
+  height: 100%;
+}
+.footerFirst {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.footerHeading {
+  color: #2a2c3f;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+
+.footerItems {
+  list-style: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #696b79;
+}
+.footerItems a {
+  color: #696b79;
+  text-decoration: none;
+}
+.footerItemsSpan {
+  background-color: red;
+  color: #fff;
+  padding: 0px 5px;
+  text-align: left;
+  border-radius: 10px;
+}
+.footerImg {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.MuiSvgIcon-root {
+  color: #696b79 ;
+  font-size: 1.7rem ;
+  margin: 0px 10px 0px 0px;
+}
+
+.footerImg .demo {
+  margin: 0px 5px 0px 0px;
+  height: 42px;
+  object-fit: contain;
+}
+.footerSecond {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-top: 2em;
+}
+
+.insideFooterSecond {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: left;
+}
+.insideFooterSecond img {
+  width: 60px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.insideFooterSecond p {
+  color: #696b79;
+  font-size: 0.9rem;
+  font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.insideFooterSecond p span {
+  color: #2a2c3f;
+  font-weight: 900;
+  font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+.footerMiddle {
+  margin: 2rem 3rem;
+  padding: 0rem 4rem;
+}
+.footerMiddleHead {
+  position: relative;
+}
+
+.footerMiddleHead::after {
+  content: "";
+  position: absolute;
+  /* width: 900px; */
+  height: 1px;
+  top: 50%;
+  margin-left: 5px;
+  background-color: #eaeaec;
+}
+.footerMiddleLinks {
+  color: #696b79;
+  margin: 1px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.footerMiddleLinks > span {
+  color: #696b79;
+}
+.footerMiddlePara {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  margin: 2rem 0rem;
+}
+
+.footerMiddlePara > p {
+  color: #696b79;
+}
+.footerMiddlePara p a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: blue;
+  font-weight: 800;
+}
+
+.footerLast {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+.footerLast > div > span {
+  color: #696b79;
+  font-size: 0.9rem;
+}
+.footerLast > div > p {
+    color: #696b79;
+    font-size: 0.9rem;
+  }
+.footerLastInside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footerLastInside span {
+  color: #526CD0;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1175px) {
+  .footerFirst {
+    flex-wrap: wrap;
+  }
+  .footerMiddleHead::after {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footerFirst {
+    flex-wrap: wrap;
+  }
+  .footerMiddleHead::after {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerMiddle {
+    margin: 1.5rem 2rem;
+    padding: 0rem 2rem;
+  }
+
+  .footerLast {
+    flex-wrap: wrap;
+  }
+  .footerMiddleHead::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .footer {
+    padding: 0.5rem 0;
+  }
+  .footerFirst {
+    margin: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .footerImg .demo {
+    width: 90px;
+  }
+}
